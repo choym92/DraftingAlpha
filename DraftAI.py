@@ -11,8 +11,8 @@ def process_season_data(year):
     # Load play-by-play data for the given year
     pbp_data = nfl.import_pbp_data([year])
 
-    # Filter the data up to Week 18
-    pbp_data = pbp_data[pbp_data['week'] <= 18]
+    # Filter the data up to Week 14
+    pbp_data = pbp_data[pbp_data['week'] <= 14]
 
     # Collecting stats for all players
     passing_tds = pbp_data[pbp_data['pass_touchdown'] == 1].groupby(['passer_player_id']).size().reset_index(name='pass_touchdown')
