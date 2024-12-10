@@ -12,7 +12,7 @@ def process_season_data(year):
     pbp_data = nfl.import_pbp_data([year])
 
     # Filter the data up to Week 14
-    pbp_data = pbp_data[pbp_data['week'] <= 14]
+    pbp_data = pbp_data[pbp_data['week'] <= 18]
 
     # Collecting stats for all players
     passing_tds = pbp_data[pbp_data['pass_touchdown'] == 1].groupby(['passer_player_id']).size().reset_index(name='pass_touchdown')
@@ -172,7 +172,7 @@ def process_season_data(year):
     final_stats = final_stats[cols]
 
     # Save the stats to a CSV file for this season
-    file_path = f'seasonalstats/player_stats_{year}_week_14.csv'
+    file_path = f'seasonalstats/player_stats_{year}.csv'
     final_stats.to_csv(file_path, index=False)
     print(f"Stats for {year} saved to '{file_path}'")
 
