@@ -1,0 +1,505 @@
+player_id,player_full_name,player_name,position,FPPRPOS,FPPRAVG,HPPRPOS,HPPRAVG,STRDPOS,STRDAVG
+00-0032241,Todd Gurley,T.Gurley,RB,RB1,1,RB1,1,RB1,1
+99-9999999,Le'Veon Bell,L.Bell,RB,RB2,2.4,RB2,2,RB2,2.2
+00-0032187,David Johnson1,D.Johnson1,RB,RB3,2.6,RB3,3.5,RB3,3.2
+00-0033045,Ezekiel Elliott,E.Elliott,RB,RB4,4,RB4,3.5,RB4,3.6
+00-0027793,Antonio Brown,A.Brown,WR,WR1,5.2,WR1,5,WR1,5.4
+00-0033906,Alvin Kamara,A.Kamara,RB,RB5,6.2,RB5,6.5,RB6,6.4
+00-0034844,Saquon Barkley,S.Barkley,RB,RB6,6.6,RB6,6.5,RB5,6.2
+00-0030564,DeAndre Hopkins1,D.Hopkins1,WR,WR2,8.8,WR2,9,WR2,10.2
+00-0033856,Leonard Fournette,L.Fournette,RB,RB7,10,RB7,9,RB7,8.4
+00-0033923,Kareem Hunt,K.Hunt,RB,RB8,10.2,RB9,10,RB8,9
+00-0031235,Odell Beckham,O.Beckham,WR,WR3,11,WR3,12,WR3,12
+00-0032144,Melvin Gordon,M.Gordon,RB,RB9,11.2,RB8,10,RB9,10.4
+00-0027944,Julio Jones1,J.Jones1,WR,WR4,12.6,WR4,14,WR4,14.4
+00-0033893,Dalvin Cook,D.Cook,RB,RB10,14.2,RB10,14,RB10,13.6
+00-0033280,Christian McCaffrey,C.McCaffrey,RB,RB11,14.8,RB11,15,RB11,15
+00-0032765,Michael Thomas,M.Thomas,WR,WR5,15.8,WR5,15.5,WR5,17.4
+00-0030279,Keenan Allen1,K.Allen1,WR,WR6,16.4,WR6,18,WR7,19
+00-0031381,Davante Adams,D.Adams,WR,WR7,18.8,WR7,18.5,WR6,17.8
+00-0031285,Devonta Freeman,D.Freeman,RB,RB12,19.2,RB12,18.5,RB12,17.6
+00-0027942,A.J. Green,A.Green,WR,WR8,20.2,WR8,21.5,WR8,21.6
+00-0027656,Rob Gronkowski,R.Gronkowski,TE,TE1,20.6,TE1,22.5,TE1,21.6
+00-0031408,Mike Evans,M.Evans,WR,WR9,23.4,WR9,23.5,WR9,25.6
+00-0032780,Jordan Howard,J.Howard,RB,RB13,23.6,RB13,19,RB13,21
+00-0033897,Joe Mixon,J.Mixon,RB,RB14,23.8,RB14,23.5,RB14,23.8
+00-0030506,Travis Kelce,T.Kelce,TE,TE2,26.6,TE2,31,TE2,28.2
+00-0027029,LeSean McCoy,L.McCoy,RB,RB15,26.8,RB15,25,RB15,26
+00-0033040,Tyreek Hill1,T.Hill1,WR,WR10,26.8,WR10,25.5,WR10,27
+00-0029608,T.Y. Hilton,T.Hilton,WR,WR11,28.2,WR12,29.5,WR12,31
+00-0023459,Aaron Rodgers,A.Rodgers,QB,QB1,28.2,QB1,31,QB1,24
+00-0031588,Stefon Diggs,S.Diggs,WR,WR12,29.8,WR11,29.5,WR11,30.2
+00-0030035,Adam Thielen,A.Thielen,WR,WR13,31.8,WR13,32.5,WR13,34.4
+00-0022921,Larry Fitzgerald,L.Fitzgerald,WR,WR14,33.6,WR16,38,WR17,43.2
+00-0033118,Kenyan Drake,K.Drake,RB,RB16,34.4,RB18,35,RB17,35.2
+00-0031544,Amari Cooper,A.Cooper,WR,WR15,34.6,WR15,37,WR14,35.4
+00-0030061,Zach Ertz,Z.Ertz,TE,TE3,35,TE3,38.5,TE3,39.8
+00-0028434,Doug Baldwin,D.Baldwin,WR,WR16,37,WR14,33.5,WR15,39.6
+00-0032426,Alex Collins,A.Collins,RB,RB17,37.4,RB16,32.5,RB16,33.2
+00-0031382,Jarvis Landry,J.Landry,WR,WR17,38.4,WR21,46,WR18,43.6
+00-0034838,Royce Freeman,R.Freeman,RB,RB18,41.2,RB20,43,RB20,41
+00-0032764,Derrick Henry,D.Henry,RB,RB19,42.2,RB17,32.5,RB18,35.8
+00-0031060,Demaryius Thomas,D.Thomas,WR,WR18,43.2,WR20,46,WR20,48.6
+00-0031590,Jay Ajayi,J.Ajayi,RB,RB20,43.8,RB19,41,RB19,39.4
+00-0033857,JuJu Smith-Schuster,J.Smith-Schuster,WR,WR19,44,WR17,41.5,WR16,42
+00-0031236,Brandin Cooks,B.Cooks,WR,WR20,45.4,WR18,44,WR19,46
+00-0027891,Golden Tate,G.Tate,WR,WR21,45.8,WR23,53,WR24,54.8
+00-0029615,Lamar Miller,L.Miller,RB,RB21,46.8,RB21,44.5,RB21,44.6
+00-0019596,Tom Brady,T.Brady,QB,QB2,47.8,QB3,54.5,QB3,43.8
+00-0033537,Deshaun Watson,D.Watson,QB,QB3,47.8,QB2,48,QB2,37.4
+00-0031428,Allen Robinson II,A.Robinson II,WR,WR22,48,WR22,50.5,WR22,54.2
+00-0029664,Josh Gordon,J.Gordon,WR,WR23,48.6,WR19,45,WR21,50.8
+00-0027966,Mark Ingram1,M.Ingram1,RB,RB22,52.2,RB22,48,RB22,52
+00-0029263,Russell Wilson,R.Wilson,QB,QB4,54.4,QB4,57,QB4,49.4
+00-0027696,Jimmy Graham,J.Graham,TE,TE4,54.4,TE4,53.5,TE4,50.2
+00-0029293,Marvin Jones,M.Jones,WR,WR24,54.8,WR24,56,WR23,54.6
+00-0028237,Chris Hogan,C.Hogan,WR,WR25,55,WR25,60,WR25,57.4
+00-0028087,Dion Lewis,D.Lewis,RB,RB23,56.4,RB25,59.5,RB25,63.4
+00-0025418,Greg olsen,G.olsen,TE,TE5,56.4,TE5,63,TE5,60.6
+00-0025399,Marshawn Lynch,M.Lynch,RB,RB24,61.4,RB23,58,RB23,59.2
+00-0027939,Cam Newton,C.Newton,QB,QB5,63.4,QB5,66,QB5,58.8
+00-0033871,Corey Davis,C.Davis,WR,WR26,63.6,WR27,67,WR27,67.6
+00-0031045,Carlos Hyde,C.Hyde,RB,RB25,65.8,RB24,58.5,RB24,60.6
+00-0026986,Michael Crabtree,M.Crabtree,WR,WR27,66.4,WR28,68.5,WR28,69.8
+00-0033881,Evan Engram,E.Engram,TE,TE6,66.4,TE6,68,TE6,68
+00-0030068,Marquise Goodwin,M.Goodwin,WR,WR28,67,WR29,70.5,WR26,67
+00-0027685,Emmanuel Sanders,E.Sanders,WR,WR29,67,WR31,73.5,WR31,78.6
+00-0030288,Rex Burkhead,R.Burkhead,RB,RB26,69.8,RB30,73.5,RB29,73.2
+00-0020531,Drew Brees,D.Brees,QB,QB6,71.4,QB6,70,QB6,60.8
+00-0032058,Tevin Coleman,T.Coleman,RB,RB27,71.8,RB27,68.5,RB27,67
+00-0027150,Julian Edelman,J.Edelman,WR,WR30,72.2,WR30,72,WR29,75.6
+00-0024389,Delanie Walker,D.Walker,TE,TE7,73,TE7,77.5,TE8,79
+00-0029137,Alshon Jeffery,A.Jeffery,WR,WR31,73.4,WR26,64.5,WR30,76.8
+00-0027981,Kyle Rudolph,K.Rudolph,TE,TE8,77.2,TE8,78,TE7,77.4
+00-0034349,Kerryon Johnson,K.Johnson,RB,RB28,77.8,RB29,70.5,RB26,66.2
+00-0033948,Jamaal Williams1,J.Williams1,RB,RB29,78,RB31,74,RB28,69.8
+00-0033127,William Fuller,W.Fuller,WR,WR32,79.8,WR33,76.5,WR32,79.4
+00-0031325,Sammy Watkins,S.Watkins,WR,WR33,80.2,WR32,75,WR33,82.8
+00-0032950,Carson Wentz,C.Wentz,QB,QB7,81.2,QB7,77.5,QB7,75.2
+00-0030431,Robert Woods,R.Woods,WR,WR34,82.4,WR36,89,WR36,89.4
+00-0034845,Sony Michel,S.Michel,RB,RB30,82.8,RB28,69,RB30,76
+00-0032055,Devin Funchess,D.Funchess,WR,WR35,82.8,WR34,79.5,WR35,87.2
+00-0034750,Rashaad Penny,R.Penny,RB,RB31,83.6,RB26,61,RB31,82
+00-0030472,Jordan Reed,J.Reed,TE,TE9,84.6,TE10,96,TE10,89.8
+00-0033908,Cooper Kupp,C.Kupp,WR,WR36,85,WR35,85.5,WR37,89.4
+00-0033556,Tarik Cohen,T.Cohen,RB,RB32,85.6,RB34,86,RB34,91.4
+00-0030710,Trey Burton,T.Burton,TE,TE10,85.6,TE9,81.5,TE9,83
+88-8888888,Jacksonville Jaguars,J.Jaguars,DS,DST1,86,DST1,95,DST1,88
+00-0032257,Duke Johnson2,D.Johnson2,RB,RB33,86.6,RB39,106.5,RB40,107.4
+00-0029604,Kirk Cousins,K.Cousins,QB,QB8,88,QB8,85,QB8,81
+00-0031941,Jamison Crowder,J.Crowder,WR,WR37,88.4,WR39,93.5,WR42,105
+00-0032688,Robbie Anderson,R.Anderson,WR,WR38,89.8,WR38,92.5,WR38,94.2
+00-0033594,Chris Carson,C.Carson,RB,RB34,90.4,RB36,97,RB32,83.8
+00-0029668,Andrew Luck,A.Luck,QB,QB9,92,QB9,97,QB9,85.6
+00-0026345,Pierre Garcon,P.Garcon,WR,WR39,92.6,WR40,95.5,WR39,97.8
+00-0026176,Jordy Nelson1,J.Nelson1,WR,WR40,93.2,WR37,90,WR34,86.8
+00-0030656,Isaiah Crowell,I.Crowell,RB,RB35,94.8,RB35,86.5,RB33,90
+00-0026498,Matthew Stafford,M.Stafford,QB,QB10,97,QB11,101.5,QB10,91.4
+00-0028002,Randall Cobb,R.Cobb,WR,WR41,99.4,WR41,96.5,WR41,104.6
+00-0022924,Ben Roethlisberger,B.Roethlisberger,QB,QB11,100.6,QB14,111.5,QB11,93.4
+00-0031549,Nelson Agholor,N.Agholor,WR,WR42,102,WR42,100.5,WR40,103.8
+00-0033951,Marlon Mack,M.Mack,RB,RB36,104.8,RB33,85,RB36,95.2
+88-8888888,Los Angeles Rams,L.Angeles Rams,DS,DST2,104.8,DST2,106,DST2,103.8
+00-0031345,Jimmy Garoppolo,J.Garoppolo,QB,QB12,105.2,QB10,100.5,QB12,93.6
+00-0032385,Sterling Shepard,S.Shepard,WR,WR43,105.6,WR44,109.5,WR43,112.4
+00-0032741,Peyton Barber,P.Barber,RB,RB37,106.4,RB40,108,RB37,97.2
+00-0026143,Matt Ryan,M.Ryan,QB,QB13,107,QB13,110.5,QB13,102.2
+00-0030181,Jack Doyle,J.Doyle,TE,TE11,108.6,TE12,124,TE12,122.4
+00-0030404,Chris Thompson,C.Thompson,RB,RB38,109,RB54,171.5,RB35,93.2
+00-0022942,Philip Rivers,P.Rivers,QB,QB14,109,QB12,108.5,QB14,103.2
+00-0033111,Pharoh Cooper,P.Cooper,WR,WR88,112,WR70,157,WR102,242
+88-8888888,Minnesota Vikings,M.Vikings,DS,DST3,112,DST3,111,DST3,111
+00-0034816,Ronald Jones,R.Jones,RB,RB39,112.4,RB32,78.5,RB38,100.4
+00-0033885,David Njoku,D.Njoku,TE,TE12,112.6,TE11,114.5,TE11,114.2
+00-0031359,Kelvin Benjamin,K.Benjamin,WR,WR44,113.8,WR43,108,WR44,118.8
+88-8888888,Philadelphia Eagles,P.Eagles,DS,DST4,114,DST4,123,DST4,117.5
+00-0030085,Kenny Stills,K.Stills,WR,WR45,115.8,WR45,115,WR45,119.6
+00-0031062,James White,J.White,RB,RB40,116,RB47,130,RB44,124.8
+00-0033293,Aaron Jones1,A.Jones1,RB,RB41,116.8,RB37,98.5,RB41,115.4
+00-0033873,Patrick Mahomes,P.Mahomes,QB,QB15,120.8,QB15,118,QB16,114.6
+00-0033106,Jared Goff,J.Goff,QB,QB16,121,QB16,118.5,QB15,111.6
+00-0031547,DeVante Parker,D.Parker,WR,WR46,125.2,WR48,122.5,WR47,129.4
+00-0030821,Allen Hurns,A.Hurns,WR,WR47,125.2,WR46,120,WR48,131.4
+00-0025394,Adrian Peterson,A.Peterson,RB,RB42,125.4,RB42,122.5,RB39,103.6
+00-0034791,Nick Chubb,N.Chubb,RB,RB43,127.4,RB38,104,RB42,118.8
+00-0029854,C.J. Anderson,C.Anderson,RB,RB44,130.2,RB41,112,RB43,119.4
+88-8888888,Baltimore Ravens,B.Ravens,DS,DST5,132.8,DST7,138,DST6,132.8
+88-8888888,Los Angeles Chargers,L.Angeles Chargers,DS,DST6,132.8,DST5,127,DST5,126.3
+00-0029621,Greg Zuerlein,G.Zuerlein,K,K1,134.2,K1,133.5,K2,135.2
+00-0023436,Alex Smith,A.Smith,QB,QB17,134.4,QB18,138.5,QB17,135.6
+00-0033308,Matt Breida,M.Breida,RB,RB45,134.8,RB51,152,RB47,135
+00-0034837,Calvin Ridley,C.Ridley,WR,WR48,135.6,WR47,122,WR46,126.6
+00-0024333,Stephen Gostkowski,S.Gostkowski,K,K2,136.2,K2,139,K1,131
+00-0033681,Keelan Cole,K.Cole,WR,WR49,136.4,WR54,154.5,WR51,137.4
+00-0033288,George Kittle,G.Kittle,TE,TE13,136.8,TE13,130.5,TE13,136
+00-0032200,Ty Montgomery,T.Montgomery,RB,RB46,137.2,RB44,124.5,RB50,139.2
+00-0032268,Marcus Mariota,M.Mariota,QB,QB18,137.4,QB17,135,QB20,141.4
+00-0030549,Tyler Eifert,T.Eifert,TE,TE14,137.4,TE14,146,TE14,140
+88-8888888,Houston Texans,H.Texans,DS,DST7,138.3,DST6,137,DST7,138
+00-0031280,Derek Carr,D.Carr,QB,QB19,138.4,QB19,143,QB18,140.4
+00-0034827,DJ Moore1,D.Moore1,WR,WR50,139,WR49,122.5,WR50,135.6
+00-0032972,Devontae Booker,D.Booker,RB,RB56,141,RB48,138,RB46,134.8
+00-0030456,Giovani Bernard,G.Bernard,RB,RB47,141.4,RB50,147,RB53,149.6
+00-0033077,Dak Prescott,D.Prescott,QB,QB20,141.8,QB20,151.5,QB19,140.8
+00-0029597,Justin Tucker,J.Tucker,K,K3,142.2,K3,148.5,K3,142
+00-0028064,Bilal Powell1,B.Powell1,RB,RB48,142.4,RB49,141,RB51,142.8
+00-0030513,Latavius Murray,L.Murray,RB,RB49,142.6,RB43,123,RB48,137
+00-0034764,Michael Gallup,M.Gallup,WR,WR51,144.2,WR52,146,WR52,145
+00-0033932,Kenny Golladay,K.Golladay,WR,WR52,144.6,WR50,134,WR53,145.8
+00-0033725,Corey Clement,C.Clement,RB,RB50,144.8,RB45,125.5,RB49,138.6
+00-0029141,Alfred Morris,A.Morris,RB,RB51,145,RB56,169.5,RB45,132.6
+00-0032780,J. Howard,J.Howard,TE,TE15,147.8,TE15,154,TE15,157
+00-0032760,Josh Doctson,J.Doctson,WR,WR53,148.2,WR58,160.5,WR54,156
+00-0032211,Tyler Lockett,T.Lockett,WR,WR54,150,WR53,148,WR55,158.4
+00-0032543,Alex Erickson,A.Erickson,WR,WR94,151,WR69,154,,
+88-8888888,Denver Broncos,D.Broncos,DS,DST8,151.5,DST8,148,DST8,145.3
+00-0031912,Cameron Meredith,C.Meredith,WR,WR55,153,WR51,137.5,WR64,147.5
+00-0030107,Theo Riddick,T.Riddick,RB,RB52,154.4,RB58,143,RB61,167.8
+99-9999999,Marqise Lee,M.Lee,WR,WR70,156,WR62,113,WR75,164.7
+00-0029632,Mohamed Sanu,M.Sanu,WR,WR63,158,WR59,160.5,WR56,163.4
+00-0033562,Ryan Switzer,R.Switzer,WR,WR96,160,WR72,159,,
+00-0031418,Austin Seferian-Jenkins,A.Seferian-Jenkins,TE,TE16,161.3,TE17,172.5,TE18,171
+99-9999999,Dez Bryant,D.Bryant,WR,WR64,161.5,WR61,112,WR72,157
+00-0027325,LeGarrette Blount,L.Blount,RB,RB53,162,RB46,128,RB52,144.2
+00-0029580,Rishard Matthews,R.Matthews,WR,WR65,163.3,WR60,163,WR60,178.2
+88-8888888,New Orleans Saints,N.Orleans Saints,DS,DST9,164.3,DST9,152,DST9,166
+00-0033925,D'Onta Foreman,D.Foreman,RB,RB58,164.3,RB52,153,RB58,179.6
+00-0031503,Jameis Winston,J.Winston,QB,QB22,164.5,QB21,165.5,QB21,166.6
+00-0034400,Jordan Wilkins,J.Wilkins,RB,RB54,165.8,RB55,169,RB54,162.4
+00-0034353,Anthony Miller,A.Miller,WR,WR56,166,WR55,157.5,WR59,173
+00-0033921,Chris Godwin,C.Godwin,WR,WR57,166.6,WR63,170,WR58,172.8
+00-0026189,DeSean Jackson1,D.Jackson1,WR,WR66,168.3,WR66,139,WR66,171
+00-0033839,Dede Westbrook,D.Westbrook,WR,WR67,168.5,WR64,170,WR61,179.6
+00-0033553,James Conner,J.Conner,RB,RB55,169.2,RB63,189.5,RB55,167.6
+88-8888888,Chicago Bears,C.Bears,DS,DST10,169.8,DST10,173,DST11,175
+00-0027061,Jared Cook,J.Cook,TE,TE17,171,TE22,172,TE20,173.8
+00-0031257,Paul Richardson,P.Richardson,WR,WR68,171.3,WR74,163,WR69,188.8
+88-8888888,New England Patriots,N.England Patriots,DS,DST11,171.8,DST13,192,DST13,181.8
+00-0031051,John Brown1,J.Brown1,WR,WR59,173.2,WR65,180.5,WR57,169
+00-0029613,Doug Martin,D.Martin,RB,RB59,173.3,RB53,153.5,RB56,168
+88-8888888,Pittsburgh Steelers,P.Steelers,DS,DST12,175.3,DST14,195,DST10,169.5
+00-0031387,Eric Ebron,E.Ebron,TE,TE18,175.5,TE16,167,TE16,178.6
+00-0033869,Mitchell Trubisky,M.Trubisky,QB,QB21,175.8,QB22,168,QB23,186.6
+00-0031273,Cameron Brate,C.Brate,TE,TE19,175.8,TE20,151,TE21,184.5
+00-0032569,Wil Lutz,W.Lutz,K,K4,176.4,K4,172.5,K4,167.6
+00-0022803,Eli Manning,E.Manning,QB,QB23,176.5,QB23,174,QB22,171.6
+00-0033536,Mike Williams1,M.Williams1,WR,WR58,177.2,WR57,240,WR49,133.8
+00-0020578,Matt Bryant1,M.Bryant1,K,K5,178.2,K7,195,K7,178.6
+00-0033699,Austin Ekeler,A.Ekeler,RB,RB57,178.3,RB60,184.5,RB57,176.4
+00-0031136,Chris Boswell,C.Boswell,K,K6,178.6,K9,206,K8,180.2
+00-0034367,Nyheim Hines,N.Hines,RB,RB60,178.7,RB59,148,RB64,192.5
+88-8888888,Carolina Panthers,C.Panthers,DS,DST13,179.3,DST11,176,DST12,176
+00-0033303,Harrison Butker,H.Butker,K,K7,179.4,K6,191.5,K5,168.8
+00-0028112,Charles Clay,C.Clay,TE,TE20,179.5,TE26,197,TE24,210.5
+00-0034829,Mike Gesicki,M.Gesicki,TE,TE24,179.7,TE23,179,TE22,189.5
+00-0033460,John Ross,J.Ross,WR,WR60,180.2,WR75,201,WR70,189.5
+00-0031577,Javorius Allen1,J.Allen1,RB,RB61,182.3,RB69,198,RB67,200.3
+00-0030542,Tyrell Williams,T.Williams,WR,WR71,183,WR71,187,WR63,185.6
+00-0032791,Jakeem Grant,J.Grant,WR,WR98,183,WR79,181,,
+00-0031407,Blake Bortles,B.Bortles,QB,QB25,184,QB27,173,QB26,187
+00-0027973,Andy Dalton,A.Dalton,QB,QB26,184.3,QB25,186.5,QB24,192
+00-0027691,Andre Roberts,A.Roberts,WR,WR99,185,WR80,182,,
+00-0033787,Jake Elliott,J.Elliott,K,K8,185.4,K5,179,K6,170.8
+00-0022943,Benjamin Watson,B.Watson,TE,TE21,187.3,TE19,179.5,TE17,203.8
+00-0026035,Danny Amendola,D.Amendola,WR,WR61,187.6,WR77,194.5,WR74,213.3
+00-0025396,Ted Ginn,T.Ginn,WR,WR72,187.7,WR76,165,WR68,186
+00-0028986,Case Keenum,C.Keenum,QB,QB27,188,QB24,183.5,QB25,192.4
+00-0034775,Christian Kirk,C.Kirk,WR,WR74,189,WR68,183,WR71,195.8
+00-0031373,Martavis Bryant2,M.Bryant2,WR,WR75,190.3,WR56,158.5,WR67,182.5
+00-0032626,Geronimo Allison,G.Allison,WR,WR69,190.8,WR67,178.5,WR62,184.4
+00-0030470,Vance McDonald,V.McDonald,TE,TE25,193.7,TE25,191,TE27,219.3
+00-0023252,Robbie Gould,R.Gould,K,K9,194.4,K8,201,K9,181.2
+00-0034348,Courtland Sutton,C.Sutton,WR,WR62,194.4,WR78,196.5,WR65,201.6
+00-0032209,T.J. Yeldon,T.Yeldon,RB,RB62,195.3,RB65,201,RB62,186.3
+00-0032392,Austin Hooper,A.Hooper,TE,TE26,195.7,TE18,176.5,TE23,195.8
+00-0028118,Tyrod Taylor1,T.Taylor1,QB,QB24,196.8,QB26,187.5,QB27,206
+00-0033611,Ricky Seals-Jones,R.Seals-Jones,TE,TE22,198.5,TE21,188,TE19,211.6
+88-8888888,Arizona Cardinals,A.Cardinals,DS,DST14,199.3,DST16,203,DST14,215
+00-0031299,Jordan Matthews,J.Matthews,TE,TE35,201,TE27,209,TE39,214
+00-0032371,Robert Kelley,R.Kelley,RB,RB63,201,RB57,179.5,RB63,189.3
+88-8888888,Kansas City Chiefs,K.City Chiefs,DS,DST17,202,,,DST16,196.7
+00-0023853,Matt Prater,M.Prater,K,K10,202.2,K12,214,K10,204
+00-0034830,Hayden Hurst,H.Hurst,TE,TE27,204.3,TE24,187,TE25,208.7
+88-8888888,Seattle Seahawks,S.Seahawks,DS,DST18,207.5,,,DST18,205.7
+99-9999999,Trevor Davis,T.Davis,WR,WR103,208,WR84,220,,
+00-0023500,Frank Gore,F.Gore,RB,RB64,208.7,RB61,186,RB60,202
+00-0025580,Mason Crosby,M.Crosby,K,K11,209.2,K10,210,K11,211
+00-0030414,Spencer Ware,S.Ware,RB,RB65,209.7,RB66,201,RB59,199.2
+00-0033526,Samaje Perine,S.Perine,RB,RB66,210.3,RB64,184,RB66,199.7
+00-0027531,Chris Ivory,C.Ivory,RB,RB67,214.3,RB68,195,RB69,216
+00-0021547,Antonio Gates,A.Gates,TE,TE23,214.3,TE38,262,TE26,212.3
+88-8888888,Atlanta Falcons,A.Falcons,DS,DST15,216.3,DST15,202,DST15,220.5
+00-0029701,Ryan Tannehill,R.Tannehill,QB,QB28,217,QB28,208,QB32,247.7
+00-0031339,Donte Moncrief,D.Moncrief,WR,WR76,220.3,WR73,188.5,WR73,213.3
+88-8888888,Tennessee Titans,T.Titans,DS,DST16,221.3,DST17,209,DST17,205.7
+00-0034161,Daniel Carlson,D.Carlson,K,K13,223.8,K11,226.5,K12,228.4
+00-0034676,James Washington,J.Washington,WR,WR77,227.7,WR82,212,WR76,215
+00-0026901,Mike Wallace,M.Wallace,WR,WR73,227.8,WR92,238,WR80,255
+00-0034799,Kalen Ballage,K.Ballage,RB,RB68,228.7,RB72,204,RB70,240.7
+00-0026158,Joe Flacco,J.Flacco,QB,QB29,229,QB32,241,QB31,246
+00-0030542,Terrance Williams,T.Williams,WR,WR78,234.3,WR96,249,WR84,267
+00-0031301,Jeremy Hill1,J.Hill1,RB,RB69,234.3,RB71,200,RB68,207.7
+88-8888888,Detroit Lions,D.Lions,DS,DST19,235.5,DST18,213,DST22,231.3
+00-0034855,Baker Mayfield,B.Mayfield,QB,QB30,235.7,QB30,223,QB28,221.7
+00-0034052,Brandon Zylstra,B.Zylstra,WR,WR107,239,WR97,255,WR107,263
+00-0026858,Graham Gano,G.Gano,K,K14,239.8,K16,243,K15,233.2
+00-0026968,Ryan Succop,R.Succop,K,K15,240,K19,247,K16,233.8
+00-0016919,Adam Vinatieri,A.Vinatieri,K,K12,240.4,K14,250,K13,229.2
+00-0033911,Taywan Taylor2,T.Taylor2,WR,WR79,240.7,WR100,268,WR83,262
+00-0031023,Quincy Enunwa,Q.Enunwa,WR,WR80,242.3,WR81,224.5,WR82,259.3
+00-0034681,Chase Edmonds,C.Edmonds,RB,RB71,245,RB79,267,RB72,250
+00-0032411,Kenneth Dixon,K.Dixon,RB,RB70,245,RB70,199,RB71,242.3
+00-0034765,Tre'Quan Smith1,T.Smith1,WR,WR81,246.7,WR98,258,WR79,245.3
+00-0023564,Darren Sproles,D.Sproles,RB,RB72,247.7,RB76,259,RB74,266
+00-0029000,Cole Beasley,C.Beasley,WR,WR82,248,WR87,227,WR78,237
+99-9999999,Phillip Dorsett II,P.Dorsett II,WR,WR83,248.3,WR89,232,WR77,229
+88-8888888,Dallas Cowboys,D.Cowboys,DS,DST20,250,,,DST21,229.7
+00-0034808,John Kelly,J.Kelly,RB,RB73,252,RB67,232.5,RB65,241.3
+00-0026153,Jonathan Stewart,J.Stewart,RB,RB74,255,RB78,264,RB75,269.3
+00-0034351,Dallas Goedert,D.Goedert,TE,TE28,255.7,TE31,237,TE28,248
+00-0034796,Lamar Jackson,L.Jackson,QB,QB31,255.7,QB29,219,QB33,250.3
+00-0028825,Terrelle Pryor,T.Pryor,WR,WR84,255.7,WR85,222,WR88,241.5
+88-8888888,Green Bay Packers,G.Bay Packers,DS,DST21,256,,,DST20,227.7
+00-0034869,Sam Darnold,S.Darnold,QB,QB32,256.7,QB33,266,QB30,241.7
+00-0032726,Ka'imi Fairbairn,K.Fairbairn,K,K20,258,K18,229,K24,249.5
+00-0030578,Cordarrelle Patterson,C.Patterson,RB,RB75,258.7,RB74,254,RB77,276.7
+00-0024334,Brandon Marshall1,B.Marshall1,WR,WR85,259,WR95,246,WR81,257.3
+88-8888888,Cleveland Browns,C.Browns,DS,DST22,259.5,DST12,190,DST19,222.7
+00-0029822,Brandon McManus,B.McManus,K,K16,260.7,K15,235.5,K17,235
+00-0034753,Mark Andrews,M.Andrews,TE,TE41,261,TE39,274,TE40,302
+00-0027854,Sam Bradford,S.Bradford,QB,QB33,261.7,QB31,231,QB29,233
+00-0033896,Adam Shaheen,A.Shaheen,TE,TE42,262,TE41,281,TE43,283
+00-0032087,Josh Lambo,J.Lambo,K,K17,263.7,K17,221,K18,236
+00-0033054,Rico Gathers,R.Gathers,TE,TE44,265,TE43,289,TE42,322
+00-0031900,Rod Smith,R.Smith,RB,RB76,265,RB75,257,RB73,258.3
+00-0034860,Dante Pettis,D.Pettis,WR,WR86,265.3,WR99,265,WR91,261.5
+00-0029159,Jermaine Kearse,J.Kearse,WR,WR87,265.7,WR86,224,WR87,283.7
+00-0028660,Dan Bailey,D.Bailey,K,K18,266,K13,277.5,K14,230.8
+00-0033564,Jake Butt,J.Butt,TE,TE29,267.3,TE28,214,TE29,256
+99-9999999,Willie Snead,W.Snead,WR,WR102,273,WR88,228,WR96,293
+00-0034331,Jaylen Samuels,J.Samuels,RB,RB81,273,RB73,234,RB80,275
+00-0030525,Tavon Austin,T.Austin,WR,WR89,275,WR83,216,WR93,265
+00-0024221,Vernon Davis,V.Davis,TE,TE30,276,TE33,243,TE30,262.7
+99-9999999,Chris Warren,C.Warren,RB,RB83,276,,,RB91,275
+00-0033282,Curtis Samuel,C.Samuel,WR,WR113,276,WR106,287,WR111,326.5
+00-0029567,Nick Foles,N.Foles,QB,QB34,276,QB36,293,QB35,268.3
+00-0032966,Corey Coleman,C.Coleman,WR,WR90,276.3,WR90,233,WR95,267
+00-0028787,Kai Forbath,K.Forbath,K,K23,276.5,K20,263,K26,261.5
+00-0029269,Travis Benjamin,T.Benjamin,WR,WR91,276.7,WR93,240,WR86,277.7
+00-0030669,Albert Wilson,A.Wilson,WR,WR92,277.3,WR91,235,WR89,249.5
+88-8888888,Buffalo Bills,B.Bills,DS,DST23,277.5,,,DST23,273
+00-0031806,Malcolm Brown,M.Brown,RB,RB84,278.5,RB80,279,RB79,249.5
+88-8888888,Cincinnati Bengals,C.Bengals,DS,DST24,280.5,,,DST24,273.5
+00-0033295,Elijah McGuire,E.McGuire,RB,RB85,280.5,RB77,260,RB83,296
+00-0032104,Ameer Abdullah,A.Abdullah,RB,RB77,280.7,RB82,282,RB78,277
+00-0034772,Antonio Callaway,A.Callaway,WR,WR95,280.7,WR110,305,WR90,297
+00-0033658,Blake Jarwin,B.Jarwin,TE,TE46,281,TE35,251,TE37,280.5
+00-0034343,Josh Rosen,J.Rosen,QB,QB35,282,QB37,296,QB36,283
+00-0033891,Zay Jones,Z.Jones,WR,WR104,282,WR94,244,WR92,264
+00-0030108,Ryan Griffin,R.Griffin,TE,TE32,282,TE32,242,TE34,270.5
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,Fitzgerald Toussaint,,RB,,,RB109,375,RB108,338
+,Troymaine Pope,,RB,,,RB110,378,RB110,339
+,David Moore,,WR,,,WR137,390,WR124,344
+,Eric Tomlinson,,TE,,,TE58,394,TE51,346
+,Derek Carrier,,TE,,,TE61,412,TE53,354
+,Akrum Wadley,,RB,,,RB120,413,RB118,355
+,Tim Tebow,,TE,,,TE62,421,TE54,359
+,Ito Smith,,RB,,,RB125,431,RB119,367.5
+,Randy Bullock,,K3,,,K34,432,K33,331
+,Kyle Lauletta,,QB,,,QB54,433,QB43,365
+,Mike Nugent,,K3,,,,,K32,292
+,De'Angelo Henderson Sr.,,RB,,,,,RB111,343
+,Bo Scarbrough,,RB,,,,,RB112,345
+,Kapri Bibbs,,RB,,,,,RB116,350
+,Justin Jackson,,RB,,,,,RB117,354
+,Jeremy McNichols,,RB,,,,,RB120,377
