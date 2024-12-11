@@ -269,7 +269,7 @@ IND,OL,T,74,ACT,Anthony Castonzo,Anthony,Castonzo,1988-08-09,79,311,Boston Colle
 NO,DL,DE,94,ACT,Cameron Jordan,Cameron,Jordan,1989-07-10,76,287,California,00-0027962,13971,543e5e1e-50e5-482d-a6ad-498d7fab497e,24811,7447,6176,JordCa00,13338,957,7,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/sxrvbnigcksjuoo3wg2p",EDGE,20,CON,A01,Cameron,JOR051224,37097,32004a4f-5205-1224-2417-472af132c281,2011,2011,NO,24,29
 NYJ,OL,G,77,RES,James Carpenter,James,Carpenter,1989-03-22,77,321,Alabama,00-0027963,,,,,,,,,7,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/kpwnm0yirjjxgadxcxmc",,17,REG,,James,CAR302544,37098,32004341-5230-2544-8776-b8f1e3d019a0,2011,2011,SEA,,29
 BAL,DB,CB,22,ACT,Jimmy Smith,James,Smith,1988-07-26,74,210,Colorado,00-0027965,13963,c3d6c803-1c91-4bd9-956c-7f6c292558c5,24814,7511,6179,SmitJi03,12829,825,7,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/kny06oky2nnb4hbi8hsc",CB,18,WC,A01,Jimmy,SMI000006,37100,3200534d-4900-0006-4388-a92ce29739e7,2011,2011,BAL,27,30
-NO,RB,RB,22,ACT,Mark Ingram II,Mark,Ingram,1989-12-21,69,215,Alabama,00-0027966,13981,f336567d-44a9-4245-8452-1dd485fd70fb,24815,7244,6180,IngrMa01,13337,956,7,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/ky9yy9cme3vh3y58rj9w",RB,20,CON,A01,Mark,ING656964,37101,3200494e-4765-6964-19af-4fbe814368d2,2011,2011,NO,28,28
+NO,RB,RB,22,ACT,Mark Ingram,Mark,Ingram,1989-12-21,69,215,Alabama,00-0027966,13981,f336567d-44a9-4245-8452-1dd485fd70fb,24815,7244,6180,IngrMa01,13337,956,7,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/ky9yy9cme3vh3y58rj9w",RB,20,CON,A01,Mark,ING656964,37101,3200494e-4765-6964-19af-4fbe814368d2,2011,2011,NO,28,28
 GB,DL,DE,96,RES,Muhammad Wilkerson,Muhammad,Wilkerson,1989-10-22,76,315,Temple,00-0027968,13985,3877e0ba-222f-4bd2-887c-1db8f1a5e7d1,24817,7464,6182,WilkMu00,12806,819,7,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/b420zpvo9xcftkj0akvw",,17,REG,,Muhammad,WIL078350,37103,32005749-4c07-8350-9de4-93cf8f0162a5,2011,2011,NYJ,,28
 PIT,DL,DT,97,ACT,Cameron Heyward,Cameron,Heyward,1989-05-06,77,295,Ohio State,00-0027969,13977,9779acc7-ed88-4a16-b78d-230ace9ec3eb,24818,7449,6183,HeywCa01,12902,843,7,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/tr1uztjiareb4sb7vqzb",INTERIOR_LINE,17,REG,A01,Cameron,HEY271611,37104,32004845-5927-1611-4c0d-39454c8d1eaf,2011,2011,PIT,31,29
 CIN,QB,QB,14,RES,Andy Dalton,Andy,Dalton,1987-10-29,74,220,Texas Christian,00-0027973,14012,d2a0e5af-3850-4f16-8e40-a0b1d15c2ce1,24822,7355,6187,DaltAn00,12841,829,7,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/fex1enmwhsyid5jyue7t",,17,REG,,Andy,DAL659900,37110,32004441-4c65-9900-551d-a31a0423b3ca,2011,2011,CIN,,30
@@ -538,7 +538,7 @@ JAX,DL,DE,55,ACT,Lerentee McCray,Lerentee,McCray,1990-08-26,75,249,Florida,00-00
 DEN,K,K,8,ACT,Brandon McManus,Brandon,McManus,1991-07-25,75,201,Temple,00-0029822,16339,6444feb1-f5a4-4b45-9a45-79308a4445fd,27120,9948,8437,,14996,1433,5,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/i8pbdmoepso0czwxnm9y",,17,REG,A01,Brandon,MCM226186,40276,32004d43-4d22-6186-f944-10ba09a79444,2013,2013,,,27
 LA,WR,WR,15,CUT,Nick Williams,Nick,Williams,1990-11-23,70,184,Connecticut,00-0029848,16345,c87f0526-a85d-439d-a447-070c66ede612,27201,9037,8005,,15268,1604,5,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/xzbqirh5sxfjtmmnrupw",,21,SB,,Nick,WIL456782,40305,32005749-4c45-6782-9d2e-c19e67f2f2a6,2013,2013,,,27
 LA,RB,RB,35,ACT,CJ Anderson,Cortrelle,Anderson,1991-02-10,68,224,California,00-0029854,16040,f7841baa-9284-4c03-b698-442570651c6c,26878,8931,8101,,15020,1451,5,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/jqqdxuowpdgl06zy0g0a",RB,21,SB,A01,C.J.,AND163330,40311,3200414e-4416-3330-3837-6f82fc6855cf,2013,2013,,,27
-TB,QB,QB,4,ACT,Ryan Griffin,Ryan,Griffin,1989-11-17,77,210,Tulane,00-0029857,16140,949c34b9-150a-4a1b-b884-1fcf1ebaabdf,26949,8923,7983,,15190,1550,5,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/afdzyedtv5bbcva9ljcy",,17,REG,A01,Ryan,GRI294351,40314,32004752-4929-4351-4c0e-39c1aef9403f,2013,2013,,,28
+TB,QB,QB,4,ACT,Ryan Griffin QB,Ryan,Griffin,1989-11-17,77,210,Tulane,00-0029857,16140,949c34b9-150a-4a1b-b884-1fcf1ebaabdf,26949,8923,7983,,15190,1550,5,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/afdzyedtv5bbcva9ljcy",,17,REG,A01,Ryan,GRI294351,40314,32004752-4929-4351-4c0e-39c1aef9403f,2013,2013,,,28
 TEN,LB,ILB,51,ACT,Will Compton,William,Compton,1989-09-19,73,235,Nebraska,00-0029869,16324,401c4b1f-8302-433e-a84d-9d3101a30f4b,27203,9924,8308,,15327,1626,5,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/jpqbnihjvf84ah121njg",,17,REG,A01,Will,COM673597,40326,3200434f-4d67-3597-dd27-1e2e40c96ad4,2013,2013,,,28
 MIA,TE,TE,48,RES,MarQueis Gray,MarQueis,Gray,1989-11-07,76,260,Minnesota,00-0029878,16323,fda00e5c-b7df-487a-9a24-5e4087c575e1,27213,8980,8286,,15371,1636,5,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/pbuxaz8hy9fxow3zq5sr",,17,REG,,MarQueis,GRA739815,40335,32004752-4173-9815-46f6-94bccacd7941,2013,2013,,,28
 MIN,LS,LS,47,ACT,Kevin McDermott,Kevin,McDermott,1990-01-12,77,240,UCLA,00-0029879,,,,,,,,,5,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/f98eypvue65qqsjpldgj",,17,REG,A01,Kevin,MCD193795,40336,32004d43-4419-3795-f006-2206b9d80cc7,2013,2013,,,28
@@ -599,7 +599,7 @@ WAS,K,K,3,ACT,Dustin Hopkins,Dustin,Hopkins,1990-10-01,74,203,Florida State,00-0
 TEN,LB,ILB,50,RES,Nate Palmer,Nate,Palmer,1989-09-23,74,248,Illinois State,00-0030104,15930,a1308227-2421-4537-9074-3218f078d9f6,26816,8956,7974,PalmNa01,15139,1528,5,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/a0dtadqytswayym4ydbq",,17,REG,,Nate,PAL534886,40141,32005041-4c53-4886-dfa8-9d3582f27965,2013,2013,GB,,28
 SF,DL,DT,63,CUT,Chris Jones,Chris,Jones,,73,293,Bowling Green State,00-0030106,15955,c63eb820-738c-4b32-83f4-65ed80d54ae4,26821,5250,7979,JoneCh04,14991,1430,5,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/vvjxh6a7wca6lhyiscad",,17,REG,,Chris,JON162611,40146,32004a4f-4e16-2611-95e6-ca3fd18c2471,2013,2013,HOU,,
 DET,RB,RB,25,ACT,Theo Riddick,Theo,Riddick,1991-05-04,69,201,Notre Dame,00-0030107,15994,62d4e94c-443f-44ed-9404-c6d6bdd9aa64,26822,8763,7980,RiddTh00,15126,1517,5,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/aptuag5ocazmionhvnt6",RB,17,REG,A01,Theo,RID187949,40147,32005249-4418-7949-2583-81ad82348db8,2013,2013,DET,199,27
-HOU,TE,TE,84,ACT,Ryan Griffin,Ryan,Griffin,1990-01-11,78,255,Connecticut,00-0030108,15887,cb1df42c-b59c-4e23-a9a2-fbfc2b39ef71,26824,8911,7982,GrifRy00,14985,1425,5,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/ntkwyyft1r9xefhlc66m",TE,18,WC,A01,Ryan,GRI293499,40149,32004752-4929-3499-4553-f2c6b22bb2af,2013,2013,HOU,201,28
+HOU,TE,TE,84,ACT,Ryan Griffin TE,Ryan,Griffin,1990-01-11,78,255,Connecticut,00-0030108,15887,cb1df42c-b59c-4e23-a9a2-fbfc2b39ef71,26824,8911,7982,GrifRy00,14985,1425,5,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/ntkwyyft1r9xefhlc66m",TE,18,WC,A01,Ryan,GRI293499,40149,32004752-4929-3499-4553-f2c6b22bb2af,2013,2013,HOU,201,28
 JAX,RB,FB,40,ACT,Tommy Bohanon,Thomas,Bohanon,1990-09-10,73,246,Wake Forest,00-0030112,15973,97c96dce-9b33-4d0e-ba01-5eb629192d19,26838,8987,7997,BohaTo00,14891,1369,5,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/lmoesdqqzu6v8rmnyqlk",FB,17,REG,A01,Tommy,BOH116572,40163,3200424f-4811-6572-3b62-4915558571f6,2013,2013,NYJ,215,27
 NYJ,WR,WR,88,CUT,Charles D Johnson,Charles D.,Johnson,,74,217,Grand Valley State,00-0030113,15885,be08946a-31ea-46da-b572-19c1e1948d14,26839,8913,7998,JohnCh08,15141,1530,5,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/g9xhdanrpvnxwrqhran5",,17,REG,,Charles D.,JOH105729,40164,32004a4f-4810-5729-a13f-fb8ef282ab3e,2013,2013,GB,,
 BUF,DB,FS,21,ACT,Jordan Poyer,Jordan,Poyer,1991-04-25,72,191,Oregon State,00-0030114,15979,95fab6fa-3ee1-47d0-93ad-c7ff41744be7,26841,8639,8000,PoyeJo00,14860,1343,5,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/omubm1gbwmtfrcl7r5ql",SAFETY,17,REG,A01,Jordan,POY177981,40166,3200504f-5917-7981-49e3-4504d10369fb,2013,2013,PHI,218,27
@@ -1786,7 +1786,7 @@ OAK,LB,OLB,91,RES,Shilique Calhoun,Shilique,Calhoun,1992-03-20,76,250,Michigan S
 JAX,DL,DE,91,ACT,Yannick Ngakoue,Yannick,Ngakoue,1995-03-31,74,246,Maryland,00-0033123,3053044,41524c86-8ab6-42e9-871b-a00e29cd2705,29303,11146,10703,NgakYa00,17999,3238,2,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/osssbrk149htsrcubgmt",EDGE,17,REG,A01,Yannick,NGA355963,43358,32004e47-4135-5963-d006-ceac3beca035,2016,2016,JAX,69,23
 GB,DB,CB,25,RES,Will Redmond,Will,Redmond,1993-12-28,71,186,Mississippi State,00-0033124,2971364,c7fccdf9-dd52-4483-862b-d58a94560135,29302,11117,10702,RedmWi00,17998,3237,2,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/buhadh8agx7e0gen0tqf",,17,REG,,Will,RED713301,43357,32005245-4471-3301-df0f-6b89425dbb05,2016,2016,SF,,24
 CLE,LB,MLB,53,ACT,Joe Schobert,Joseph,Schobert,1993-11-06,73,245,Wisconsin,00-0033125,2977819,82a70525-35cd-4389-a5d1-3b0f11f05a28,29333,10968,10733,SchoJo00,17967,3206,2,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/xpjqg8kxki9whksb2gxu",MLB,17,REG,A01,Joe,SCH425646,43388,32005343-4842-5646-1190-b0a27a5ab760,2016,2016,CLE,99,24
-HOU,WR,WR,15,RES,William Fuller V,Will,Fuller,1994-04-16,72,180,Notre Dame,00-0033127,3052876,095e0c1a-0bea-4bc6-868f-e4bbe2ce6c30,29255,10818,10655,FullWi01,17916,3157,2,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/y0y6lyylu0iq0fmqb2i0",,18,WC,,Will,FUL503598,43310,32004655-4c50-3598-6762-28495ce40669,2016,2016,HOU,,24
+HOU,WR,WR,15,RES,William Fuller,Will,Fuller,1994-04-16,72,180,Notre Dame,00-0033127,3052876,095e0c1a-0bea-4bc6-868f-e4bbe2ce6c30,29255,10818,10655,FullWi01,17916,3157,2,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/y0y6lyylu0iq0fmqb2i0",,18,WC,,Will,FUL503598,43310,32004655-4c50-3598-6762-28495ce40669,2016,2016,HOU,,24
 TB,DL,DE,94,ACT,Carl Nassib,Carl,Nassib,1993-04-12,79,275,Penn State,00-0033129,2614825,ed2317f2-1cc5-4a84-a46e-7423a9a1c730,29299,11142,10699,NassCa00,17995,3234,2,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/p1fdettzyye6rknu5wrl",,17,REG,A01,Carl,NAS727044,43354,32004e41-5372-7044-a589-a4ae370803e6,2016,2016,CLE,65,25
 DAL,DL,DT,96,ACT,Maliek Collins,Maliek,Collins,1995-04-08,74,305,Nebraska,00-0033131,3040471,54f13aa1-4a2f-46a3-99ef-743c1d3ee234,29301,10976,10701,CollMa00,17997,3236,2,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/s4pgyxnnzahujdkek9oe",INTERIOR_LINE,19,DIV,A01,Maliek,COL633184,43356,3200434f-4c63-3184-3f7e-5796185e9486,2016,2016,DAL,67,23
 TEN,DB,FS,31,ACT,Kevin Byard,Kevin,Byard,1993-08-17,71,212,Middle Tennessee,00-0033132,2574056,c909532a-693e-4e8f-b853-fbf41037c100,29298,11218,10698,ByarKe01,17994,3233,2,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/pubhsflxtln3cxbfmiq3",SAFETY,17,REG,A01,Kevin,BYA251361,43353,32004259-4125-1361-f4be-db294c8d9a0f,2016,2016,TEN,64,25
@@ -2214,7 +2214,7 @@ CHI,QB,QB,10,ACT,Mitchell Trubisky,Mitchell,Trubisky,1994-08-20,75,222,North Car
 SF,DL,DE,94,ACT,Solomon Thomas,Solomon,Thomas,1995-08-26,75,273,Stanford,00-0033870,3117258,74473bcc-5bdb-4650-8549-8a8a12874cbf,30116,11945,11758,ThomSo00,18904,4058,1,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/m5uonrvkihqy7aoo9qif",INTERIOR_LINE,17,REG,A01,Solomon,THO381630,44815,32005448-4f38-1630-9012-3ee085da5a84,2017,2017,SF,3,23
 TEN,WR,WR,84,ACT,Corey Davis,Corey,Davis,1995-01-11,75,209,Western Michigan,00-0033871,3042778,e21e9081-44aa-464b-8d3e-83918d48b921,30118,11733,11760,DaviCo03,18879,4036,1,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/bvc0v713yjjeq5pvlep4",WR,17,REG,A01,Corey,DAV247957,44817,32004441-5624-7957-ef31-0e38b3301e4b,2017,2017,TEN,5,23
 NYJ,DB,SS,33,ACT,Jamal Adams,Jamal,Adams,1995-10-17,73,213,Louisiana State,00-0033872,3115373,1a92b0ad-3eb2-4df3-bf02-04c4d9ffe10c,30119,11985,11761,AdamJa00,18923,4077,1,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/rkfeccliegbingflazdo",SAFETY,17,REG,A01,Jamal,ADA392115,44818,32004144-4139-2115-dda7-1e943e0d454b,2017,2017,NYJ,6,22
-KC,QB,QB,15,ACT,Patrick Mahomes,Patrick,Mahomes,1995-09-17,75,230,Texas Tech,00-0033873,3139477,11cad59d-90dd-449c-a839-dddaba4fe16c,30123,11839,11765,MahoPa00,18890,4046,1,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/ugt3pz3jk8v1cbuvj3om",QB,20,CON,A01,Patrick,MAH401939,44822,32004d41-4840-1939-e4c1-bb89191b4e71,2017,2017,KC,10,22
+KC,QB,QB,15,ACT,Patrick Mahomes II,Patrick,Mahomes,1995-09-17,75,230,Texas Tech,00-0033873,3139477,11cad59d-90dd-449c-a839-dddaba4fe16c,30123,11839,11765,MahoPa00,18890,4046,1,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/ugt3pz3jk8v1cbuvj3om",QB,20,CON,A01,Patrick,MAH401939,44822,32004d41-4840-1939-e4c1-bb89191b4e71,2017,2017,KC,10,22
 NO,DB,CB,23,ACT,Marshon Lattimore,Marshon,Lattimore,1996-05-20,72,192,Ohio State,00-0033874,3121421,66386076-7d61-47b7-88e2-34a883de250f,30124,12023,11766,LattMa01,18905,4059,1,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/p17hdflcb1vnzdf5zo7u",CB,20,CON,A01,Marshon,LAT684977,44823,32004c41-5468-4977-40ce-6a12d45573c2,2017,2017,NO,11,22
 ARI,LB,ILB,43,ACT,Haason Reddick,Haason,Reddick,1994-09-22,73,235,Temple,00-0033875,2980504,ee399a97-6868-4db1-9381-09073914c2d6,30126,11937,11768,ReddHa00,18909,4063,1,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/ndfvnsjolwm60bsdlccn",MLB,17,REG,A01,Haason,RED324095,44825,32005245-4432-4095-207d-440aa35fb3ac,2017,2017,ARI,13,23
 PHI,DL,DE,96,RES,Derek Barnett,Derek,Barnett,1996-06-25,75,259,Tennessee,00-0033876,3115336,2d74a108-2b17-4db3-8ef1-0c2e845b414e,30127,11901,11769,BarnDe01,18911,4065,1,"https://static.www.nfl.com/image/private/f_auto,q_auto/league/zocust5dmopgeyk2iwac",,19,DIV,,Derek,BAR405176,44826,32004241-5240-5176-20ec-029ab37b9d27,2017,2017,PHI,,22
@@ -6524,3 +6524,65 @@ PHI,DL,DT,67,CUT,Caleb Sanders,Caleb,Sanders,,73,270,South Dakota State,00-00391
 ,,,,,Johnny Manziel,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,Colin Kaepernick,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,Aaron Hernandez,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Nick Novak,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Jay Cutler,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Glenn Gronkowski,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Anthony Fasano,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Matt Forte,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Eddie Lacy,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Martellus Bennett,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Carson Palmer,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Kellen Clemens,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,John Kuhn,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Danny Woodhead,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,DeMarco Murray,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Brent Celek,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Louis Murphy,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Darren McFadden,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Alonzo Harris,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Joe Banyard,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Robert Griffin,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Connor Barth,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Travis Coons,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Patrick Murray,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Don Jackson,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Julius Thomas,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Dri Archer,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Elliott,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Corey Acosta,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Orleans Darkwa,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Jacob Dolegala,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Mike Tolbert,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Marqise,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Tim Tebow,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Andrew Franks,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Aaron Hernandez,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Chandler,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Johnny Manziel,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Ryan Mallett,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Roosevelt,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,TJ Yates,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Coby Fleener,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Chris Matthews,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Scott Tolzien,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Will Hastings,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Albert kwuegbunam,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Deonte Harty,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,PJ Walker,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Paul McRoberts,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Nick Tiano,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Kent Taylor,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Phillip Andersen,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Jamal Robinson,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Daniel Crawford,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,De'Angelo Henderson,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Tyron Billy-Johnson,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Ray Rice,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Michael Strachan,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Gardner Minshew II,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Broc Rutter,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Andy Phillips,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Corey Taylor,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,TJ Linta,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Isaiah Burse,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,Derel Walker,,,,,,,99-9999999,,,,,,,,,,,,,,,,,,,,,,,
