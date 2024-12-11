@@ -33,8 +33,10 @@ def simulate_draft(trial_number):
     random.shuffle(draft_order)  # Randomize the draft order
     results = []
 
-    # Track required positions for each manager (1 QB, 1 K, 1 DST)
-    required_positions = {f"Team_{i}": {"QB": 1, "K": 1, "DST": 1} for i in range(1, num_managers + 1)}
+    # Track required positions for each manager
+    required_positions = {
+        f"Team_{i}": {"QB": 1, "K": 1, "DST": 1, "RB": 2, "WR": 2, "TE": 1} for i in range(1, num_managers + 1)
+    }
 
     # Simulate the draft
     for round_num in range(1, num_rounds + 1):
@@ -91,6 +93,7 @@ def simulate_draft(trial_number):
             adp_df = adp_df[adp_df['player_id'] != selected_player['player_id']].reset_index(drop=True)
 
     return results
+
 
 # Run the simulation 10 times
 all_results = []
