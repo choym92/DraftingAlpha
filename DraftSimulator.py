@@ -35,7 +35,6 @@ def simulate_draft(trial_number):
 
     # Track required positions for each manager (1 QB, 1 K, 1 DST)
     required_positions = {f"Team_{i}": {"QB": 1, "K": 1, "DST": 1} for i in range(1, num_managers + 1)}
-    drafted_players = {f"Team_{i}": {"QB": 0, "K": 0, "DST": 0} for i in range(1, num_managers + 1)} # Track drafted players
 
     # Simulate the draft
     for round_num in range(1, num_rounds + 1):
@@ -49,28 +48,31 @@ def simulate_draft(trial_number):
                 print("No players left to draft!")
                 break
 
-            # Check which positions are still needed for the team
-            remaining_required_positions = {pos for pos, count in drafted_players[team_name].items() if count == 0}
+            # Check how many required positions are left to fill for the team
+            remaining_required_positions = {pos: count for pos, count in required_positions[team_name].items() if count > 0}
+            num_unmet_positions = len(remaining_required_positions)
 
-            # From round 14 onwards, if any positions are required, draft from them
-            if round_num >= num_rounds - 3:
-                # Check if the team still needs positions to be filled
-                if remaining_required_positions:
-                    # Filter players for the remaining required positions
-                    available_players = adp_df[adp_df['POSITION'].isin(remaining_required_positions)]
+            # Dynamically determine when to start enforcing constraints
+            rounds_left = num_rounds - round_num + 1
+            enforce_constraints = num_unmet_positions > 0 and rounds_left <= num_unmet_positions
 
-                    if not available_players.empty:
-                        # Select the lowest FPPRAVG player from the remaining required positions
-                        selected_player = available_players.iloc[0]
-                    else:
-                        # If no player for the required position is left, pick the lowest FPPRAVG player
-                        selected_player = adp_df.iloc[0]
+            if enforce_constraints:
+                # Filter the ADP list to only include players for unmet positions
+                available_players = adp_df[adp_df['POSITION'].isin(remaining_required_positions.keys())]
+                if not available_players.empty:
+                    # Select the lowest FPPRAVG player from the remaining required positions
+                    selected_player = available_players.iloc[0]
+                    required_positions[team_name][selected_player['POSITION']] -= 1  # Reduce count for that position
                 else:
-                    # If no remaining required positions, pick the lowest FPPRAVG player
+                    # If no required position player is available, pick the lowest overall
                     selected_player = adp_df.iloc[0]
             else:
-                # In earlier rounds, select based on lowest FPPRAVG (no position constraints)
+                # Otherwise, pick the lowest FPPRAVG overall player
                 selected_player = adp_df.iloc[0]
+
+                # Update required positions if the selected player fills a requirement
+                if selected_player['POSITION'] in required_positions[team_name]:
+                    required_positions[team_name][selected_player['POSITION']] -= 1
 
             # Record the pick
             results.append({
@@ -87,11 +89,6 @@ def simulate_draft(trial_number):
 
             # Remove the selected player from the pool
             adp_df = adp_df[adp_df['player_id'] != selected_player['player_id']].reset_index(drop=True)
-
-            # Update the drafted positions for the team
-            drafted_positions = drafted_players[team_name]
-            if selected_player['POSITION'] in drafted_positions:
-                drafted_positions[selected_player['POSITION']] += 1
 
     return results
 
