@@ -74,7 +74,7 @@ def simulate_draft(trial_number):
     )
 
     # Initialize draft variables
-    num_managers = 8
+    num_managers = 12
     num_rounds = 16
     draft_order = list(range(1, num_managers + 1))
     random.shuffle(draft_order)  # Randomize the draft order
@@ -164,9 +164,9 @@ def simulate_draft(trial_number):
 
     return results
 
-# Run the simulation 10 times
+# Run the simulation 100 times
 all_results = []
-for trial in range(1, 11):
+for trial in range(1, 101):
     all_results.extend(simulate_draft(trial))
 
 # Save all results to a single CSV file
@@ -259,6 +259,15 @@ for trial, trial_data in draft_results_df.groupby('trial_number'):
 
 # Convert the fantasy ranking to a DataFrame
 fantasy_ranking_df = pd.DataFrame(fantasy_ranking)
+
+# Handle missing or infinite values in 'total_fpts'
+fantasy_ranking_df['total_fpts'] = pd.to_numeric(fantasy_ranking_df['total_fpts'], errors='coerce')
+
+# Replace NaN values with 0 (or another default value if desired)
+fantasy_ranking_df['total_fpts'].fillna(0, inplace=True)
+
+# Replace infinite values with 0 (or another default value if desired)
+fantasy_ranking_df['total_fpts'].replace([float('inf'), -float('inf')], 0, inplace=True)
 
 # Rank the teams by trial based on total_fpts
 fantasy_ranking_df['rank'] = fantasy_ranking_df.groupby('trial_number')['total_fpts'].rank(ascending=False).astype(int)
