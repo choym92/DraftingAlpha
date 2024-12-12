@@ -171,6 +171,9 @@ def process_season_data(year):
     cols = ['player_id', 'player_name'] + [col for col in final_stats.columns if col not in ['player_id', 'player_name']]
     final_stats = final_stats[cols]
 
+    roster_df = pd.read_csv(f"nfl_rosters_2018_to_2023.csv")
+    final_stats = pd.merge(final_stats, roster_df[['player_id','position']], on='player_id', how='left')
+
     # Save the stats to a CSV file for this season
     file_path = f'seasonalstats/player_stats_{year}.csv'
     final_stats.to_csv(file_path, index=False)
