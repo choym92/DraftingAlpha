@@ -1,11 +1,15 @@
 import os
 import pandas as pd
 import random
+import time
+
+start_time = time.time()
 
 # Folder containing the ADP files
 adp_folder = 'adp'
 seasonal_stats_folder = 'seasonalstats'
 defensive_stats_folder = 'defensivestats'
+results_folder = 'results'
 
 # Function to load a random year's ADP file
 def load_adp_file():
@@ -124,7 +128,7 @@ def simulate_draft(trial_number):
 
                 # Determine unmet required positions
                 unmet_positions = {pos: count for pos, count in required_positions[team_name].items() if count > 0}
-                num_unmet_positions = len(unmet_positions)
+                num_unmet_positions = sum(unmet_positions.values())
                 rounds_left = num_rounds - round_num + 1
 
                 # Prioritize unmet positions if constraints apply
@@ -188,108 +192,10 @@ for trial in range(1, 1001):
 
 # Save all results to a single CSV file
 results_df = pd.DataFrame(all_results)
-output_file = os.path.join(adp_folder, 'draft_results.csv')
+output_file = os.path.join(results_folder, 'draft_results.csv')
 results_df.to_csv(output_file, index=False)
 print(f"Draft results for all trials saved to {output_file}")
 
-# Load the draft results file
-draft_results_file = os.path.join(adp_folder, 'draft_results.csv')
-draft_results_df = pd.read_csv(draft_results_file)
-
-# Ensure the draft results contain the 'year' column
-if 'year' not in draft_results_df.columns:
-    raise ValueError("'year' column is missing in the draft results file.")
-
-# Initialize the fantasy ranking results
-fantasy_ranking = []
-
-# Group by trial and team
-for trial, trial_data in draft_results_df.groupby('trial_number'):
-    for team, team_data in trial_data.groupby('team_name'):
-        # Identify the top players by position
-        team_data_sorted = team_data.sort_values(by='fpts', ascending=False)
-
-        # Get the top QB
-        top_qbs = team_data_sorted[team_data_sorted['position'] == 'QB']
-        QB1 = top_qbs.iloc[0] if not top_qbs.empty else None
-
-        # Get the top 2 RBs
-        top_rbs = team_data_sorted[team_data_sorted['position'] == 'RB']
-        RB1 = top_rbs.iloc[0] if len(top_rbs) > 0 else None
-        RB2 = top_rbs.iloc[1] if len(top_rbs) > 1 else None
-
-        # Get the top 2 WRs
-        top_wrs = team_data_sorted[team_data_sorted['position'] == 'WR']
-        WR1 = top_wrs.iloc[0] if len(top_wrs) > 0 else None
-        WR2 = top_wrs.iloc[1] if len(top_wrs) > 1 else None
-
-        # Get the top TE
-        top_tes = team_data_sorted[team_data_sorted['position'] == 'TE']
-        TE1 = top_tes.iloc[0] if not top_tes.empty else None
-
-        # Get the top K
-        top_ks = team_data_sorted[team_data_sorted['position'] == 'K']
-        K1 = top_ks.iloc[0] if not top_ks.empty else None
-
-        # Get the top DST
-        top_dsts = team_data_sorted[team_data_sorted['position'] == 'DST']
-        DST1 = top_dsts.iloc[0] if not top_dsts.empty else None
-
-        # Get the top Flex (non-QB, non-DST, and not already selected)
-        selected_players = {player['player_id'] for player in [QB1, RB1, RB2, WR1, WR2, TE1, K1, DST1] if player is not None}
-        top_flex_candidates = team_data_sorted[
-            (~team_data_sorted['position'].isin(['QB', 'DST'])) & 
-            (~team_data_sorted['player_id'].isin(selected_players))
-        ]
-        Flex1 = top_flex_candidates.iloc[0] if not top_flex_candidates.empty else None
-
-        # Calculate total fpts
-        total_fpts = sum([
-            player['fpts'] for player in [QB1, RB1, RB2, WR1, WR2, TE1, K1, DST1, Flex1] if player is not None
-        ])
-
-        # Add to the fantasy ranking results
-        fantasy_ranking.append({
-            'year': team_data['year'].iloc[0],  # Add the year from the current team's data
-            'trial_number': trial,
-            'team_name': team,
-            'QB1': QB1['player_name'] if QB1 is not None else None,
-            'QB1_fpts': QB1['fpts'] if QB1 is not None else 0,
-            'RB1': RB1['player_name'] if RB1 is not None else None,
-            'RB1_fpts': RB1['fpts'] if RB1 is not None else 0,
-            'RB2': RB2['player_name'] if RB2 is not None else None,
-            'RB2_fpts': RB2['fpts'] if RB2 is not None else 0,
-            'WR1': WR1['player_name'] if WR1 is not None else None,
-            'WR1_fpts': WR1['fpts'] if WR1 is not None else 0,
-            'WR2': WR2['player_name'] if WR2 is not None else None,
-            'WR2_fpts': WR2['fpts'] if WR2 is not None else 0,
-            'TE1': TE1['player_name'] if TE1 is not None else None,
-            'TE1_fpts': TE1['fpts'] if TE1 is not None else 0,
-            'K1': K1['player_name'] if K1 is not None else None,
-            'K1_fpts': K1['fpts'] if K1 is not None else 0,
-            'DST1': DST1['player_name'] if DST1 is not None else None,
-            'DST1_fpts': DST1['fpts'] if DST1 is not None else 0,
-            'Flex1': Flex1['player_name'] if Flex1 is not None else None,
-            'Flex1_fpts': Flex1['fpts'] if Flex1 is not None else 0,
-            'total_fpts': total_fpts
-        })
-
-# Convert the fantasy ranking to a DataFrame
-fantasy_ranking_df = pd.DataFrame(fantasy_ranking)
-
-# Handle missing or infinite values in 'total_fpts'
-fantasy_ranking_df['total_fpts'] = pd.to_numeric(fantasy_ranking_df['total_fpts'], errors='coerce')
-
-# Replace NaN values with 0 (or another default value if desired)
-fantasy_ranking_df['total_fpts'].fillna(0, inplace=True)
-
-# Replace infinite values with 0 (or another default value if desired)
-fantasy_ranking_df['total_fpts'].replace([float('inf'), -float('inf')], 0, inplace=True)
-
-# Rank the teams by trial based on total_fpts
-fantasy_ranking_df['rank'] = fantasy_ranking_df.groupby('trial_number')['total_fpts'].rank(ascending=False).astype(int)
-
-# Save to CSV
-fantasy_ranking_file = os.path.join(adp_folder, 'fantasy_ranking.csv')
-fantasy_ranking_df.to_csv(fantasy_ranking_file, index=False)
-print(f"Fantasy ranking saved to {fantasy_ranking_file}")
+end_time = time.time()
+elapsed_time = end_time - start_time
+print(f"Elapsed time: {elapsed_time} seconds")
