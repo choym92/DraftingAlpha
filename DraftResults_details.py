@@ -3,6 +3,8 @@ import pandas as pd
 import random
 import numpy as np
 
+n = 16
+
 # Folder containing the ADP files
 results_folder ='results'
 adp_folder = 'adp'
@@ -118,7 +120,6 @@ fantasy_ranking_df[waiver_columns] = 0  # Initialize columns
 # Process each year
 for year in fantasy_ranking_df['year'].unique():
     seasonal_stats_df = load_seasonal_stats(year)
-    n = 16
 
     qb_waiver_fpts = calculate_waiver_points(seasonal_stats_df, 'QB', 1.6, n)
     wr_waiver_fpts = calculate_waiver_points(seasonal_stats_df, 'WR', 3.6, n)
@@ -186,6 +187,6 @@ fantasy_ranking_df['total_fpts'].replace([float('inf'), -float('inf')], 0, inpla
 fantasy_ranking_df['rank'] = fantasy_ranking_df.groupby('trial_number')['total_fpts'].rank(ascending=False).astype(int)
 
 # Save to CSV
-fantasy_ranking_file = os.path.join(adp_folder, 'fantasy_ranking.csv')
+fantasy_ranking_file = os.path.join(results_folder, 'fantasy_ranking.csv')
 fantasy_ranking_df.to_csv(fantasy_ranking_file, index=False)
 print(f"Fantasy ranking saved to {fantasy_ranking_file}")

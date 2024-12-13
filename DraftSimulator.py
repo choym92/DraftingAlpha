@@ -5,6 +5,9 @@ import time
 
 start_time = time.time()
 
+# Set Total number of trial
+number_of_trial = 1000
+
 # Folder containing the ADP files
 adp_folder = 'adp'
 seasonal_stats_folder = 'seasonalstats'
@@ -187,7 +190,7 @@ def simulate_draft(trial_number):
 
 # Run the simulation 100 times
 all_results = []
-for trial in range(1, 1001):
+for trial in range(1, number_of_trial):
     all_results.extend(simulate_draft(trial))
 
 # Save all results to a single CSV file
