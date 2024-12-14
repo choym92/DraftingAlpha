@@ -171,6 +171,41 @@ for index, row in fantasy_ranking_df.iterrows():
         fantasy_ranking_df.at[index, 'K1_fpts'] = row['k_waiver_fpts']
         fantasy_ranking_df.at[index, 'K1'] = "waiver_k"
 
+def load_defensive_stats(year):
+    """Load seasonal defensive stats for the given year."""
+    file_name = f"seasonal_defensive_stats_{year}.csv"
+    file_path = os.path.join(defensive_stats_folder, file_name)
+    if not os.path.exists(file_path):
+        raise FileNotFoundError(f"Defensive stats file not found for year {year}: {file_path}")
+    return pd.read_csv(file_path)
+
+def calculate_defensive_waiver_points(defensive_stats_df, factor, n):
+    """Calculate the waiver points for DST based on fpts."""
+    defensive_data_sorted = defensive_stats_df.sort_values(by='fpts', ascending=False)
+    threshold_index = int(np.floor(n * factor)) - 1  # Convert to zero-based index
+    if threshold_index < len(defensive_data_sorted):
+        waiver_point = defensive_data_sorted.iloc[threshold_index]['fpts']
+        return waiver_point
+    return 0
+
+# Extend the waiver points calculation for each year
+for year in fantasy_ranking_df['year'].unique():
+    # Load seasonal defensive stats
+    defensive_stats_df = load_defensive_stats(year)
+
+    # Calculate DST waiver points
+    dst_waiver_fpts = calculate_defensive_waiver_points(defensive_stats_df, 1.6, n)
+
+    # Update the corresponding rows in the DataFrame
+    fantasy_ranking_df.loc[fantasy_ranking_df['year'] == year, 'dst_waiver_fpts'] = dst_waiver_fpts
+
+# Update DST1 fantasy points and names based on defensive waiver points
+for index, row in fantasy_ranking_df.iterrows():
+    # Update DST1
+    if row['dst_waiver_fpts'] > row['DST1_fpts']:
+        fantasy_ranking_df.at[index, 'DST1_fpts'] = row['dst_waiver_fpts']
+        fantasy_ranking_df.at[index, 'DST1'] = "waiver_dst"
+
 # Recalculate total_fpts after applying the rule
 fantasy_ranking_df['total_fpts'] = fantasy_ranking_df[['QB1_fpts', 'RB1_fpts', 'RB2_fpts', 'WR1_fpts', 'WR2_fpts', 'TE1_fpts', 'K1_fpts', 'DST1_fpts', 'Flex1_fpts']].sum(axis=1)
 
