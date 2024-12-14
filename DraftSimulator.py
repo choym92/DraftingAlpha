@@ -159,12 +159,58 @@ def simulate_draft(trial_number):
                     ]
                     if not available_players.empty:
                         selected_player = available_players.iloc[0]
+
+                        # Helper function to select a player based on weighted probabilities
+                        def select_player_with_probabilities(players, probabilities):
+                            """Randomly select a player from a list based on given probabilities."""
+                            return random.choices(players, weights=probabilities, k=1)[0]
+
+                        # Adjusted selection logic
+                        if round_num <= 3:
+                            # For rounds 1–3, apply the weighted probabilities
+                            top_players = available_players.head(5)  # Get the top 5 players by FPPRAVG
+                            if len(top_players) >= 5:
+                                probabilities = [0.64, 0.20, 0.10, 0.05, 0.01]
+                                selected_player = select_player_with_probabilities(top_players.to_dict('records'), probabilities)
+                            else:
+                                # Fallback: if fewer than 5 players, pick the lowest FPPRAVG
+                                selected_player = available_players.iloc[0]
+                        else:
+                            # For rounds 4–16, adjust probabilities for the top 6 players
+                            top_players = available_players.head(6)  # Get the top 6 players by FPPRAVG
+                            if len(top_players) >= 6:
+                                probabilities = [0.50, 0.10, 0.10, 0.10, 0.10, 0.10]
+                                selected_player = select_player_with_probabilities(top_players.to_dict('records'), probabilities)
+                            else:
+                                # Fallback: if fewer than 6 players, pick the lowest FPPRAVG
+                                selected_player = available_players.iloc[0]
+
+                        # Update team positions and required positions
                         team_position_counts[team_name][selected_player['POSITION']] += 1
                         if required_positions[team_name][selected_player['POSITION']] > 0:
                             required_positions[team_name][selected_player['POSITION']] -= 1
+
                     else:
-                        # Fallback to the lowest overall if no players meet limits
-                        selected_player = adp_df.iloc[0]
+                        # Adjusted selection logic
+                        if round_num <= 3:
+                            # For rounds 1–3, apply the weighted probabilities
+                            top_players = adp_df.head(5)  # Get the top 5 players by FPPRAVG
+                            if len(top_players) >= 5:
+                                probabilities = [0.64, 0.20, 0.10, 0.05, 0.01]
+                                selected_player = select_player_with_probabilities(top_players.to_dict('records'), probabilities)
+                            else:
+                                # Fallback: if fewer than 5 players, pick the lowest FPPRAVG
+                                selected_player = adp_df.iloc[0]
+                        else:
+                            # For rounds 4–16, adjust probabilities for the top 6 players
+                            top_players = adp_df.head(6)  # Get the top 6 players by FPPRAVG
+                            if len(top_players) >= 6:
+                                probabilities = [0.50, 0.10, 0.10, 0.10, 0.10, 0.10]
+                                selected_player = select_player_with_probabilities(top_players.to_dict('records'), probabilities)
+                            else:
+                                # Fallback: if fewer than 6 players, pick the lowest FPPRAVG
+                                selected_player = adp_df.iloc[0]
+                        # Update team positions and required positions
                         team_position_counts[team_name][selected_player['POSITION']] += 1
                         if required_positions[team_name][selected_player['POSITION']] > 0:
                             required_positions[team_name][selected_player['POSITION']] -= 1
