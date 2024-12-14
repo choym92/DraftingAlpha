@@ -3,248 +3,163 @@ import pandas as pd
 import random
 import time
 
-start_time = time.time()
+# Settings
+ADP_FOLDER = "adp"
+SEASONAL_STATS_FOLDER = "seasonalstats"
+DEFENSIVE_STATS_FOLDER = "defensivestats"
+RESULTS_FOLDER = "results"
+NUMBER_OF_TRIALS = 3
+NUM_MANAGERS = 12
+NUM_ROUNDS = 16
 
-# Set Total number of trial
-number_of_trial = 1000
+# Position limits and requirements
+POSITION_LIMITS = {"QB": 4, "RB": 8, "WR": 8, "TE": 3, "K": 3, "DST": 3}
+REQUIRED_POSITIONS = {"QB": 1, "K": 1, "DST": 1, "RB": 2, "WR": 2, "TE": 1}
 
-# Folder containing the ADP files
-adp_folder = 'adp'
-seasonal_stats_folder = 'seasonalstats'
-defensive_stats_folder = 'defensivestats'
-results_folder = 'results'
+# Weighted probabilities for player selection
+ROUND_1_3_WEIGHTS = [0.64, 0.20, 0.10, 0.05, 0.01]  # Rounds 1–3
+ROUND_4_16_WEIGHTS = [0.50, 0.10, 0.10, 0.10, 0.10, 0.10]  # Rounds 4–16
 
-# Function to load a random year's ADP file
+
+# Utility: Load files
+def load_file(folder, filename):
+    file_path = os.path.join(folder, filename)
+    if os.path.exists(file_path):
+        return pd.read_csv(file_path)
+    raise FileNotFoundError(f"File {filename} not found in folder {folder}")
+
+
+# Load ADP file
 def load_adp_file():
     year = random.choice([2018, 2019, 2020, 2021, 2022, 2023])
     file_name = f"{year}ADP.csv"
-    file_path = os.path.join(adp_folder, file_name)
-    if os.path.exists(file_path):
-        adp_df = pd.read_csv(file_path)
-        adp_df['year'] = year  # Add year column for debugging (not shown to players)
-        return adp_df
-    else:
-        raise FileNotFoundError(f"ADP file for year {year} not found in folder {adp_folder}")
+    adp_df = load_file(ADP_FOLDER, file_name)
+    adp_df['year'] = year  
+    return adp_df
 
-# Function to load seasonal stats file for a given year
+
+# Load stats
 def load_seasonal_stats(year):
-    file_name = f"player_stats_{year}.csv"
-    file_path = os.path.join(seasonal_stats_folder, file_name)
-    if os.path.exists(file_path):
-        return pd.read_csv(file_path)
-    else:
-        raise FileNotFoundError(f"Seasonal stats file for year {year} not found in folder {seasonal_stats_folder}")
+    return load_file(SEASONAL_STATS_FOLDER, f"player_stats_{year}.csv")
 
-# Function to load defensive stats file for a given year
+
 def load_defensive_stats(year):
-    file_name = f"seasonal_defensive_stats_{year}.csv"
-    file_path = os.path.join(defensive_stats_folder, file_name)
-    if os.path.exists(file_path):
-        return pd.read_csv(file_path)
-    else:
-        raise FileNotFoundError(f"Defensive stats file for year {year} not found in folder {defensive_stats_folder}")
+    return load_file(DEFENSIVE_STATS_FOLDER, f"seasonal_defensive_stats_{year}.csv")
 
-# Initialize the draft simulation
+
+# Merge stats into ADP
+def merge_stats(adp_df, seasonal_stats_df, defensive_stats_df):
+    adp_df = adp_df.merge(
+        seasonal_stats_df[["player_id", "fppr"]], on="player_id", how="left"
+    )
+    defensive_stats_df = defensive_stats_df.rename(columns={"pa_team": "player_id", "fpts": "def_fpts"})
+    adp_df = adp_df.merge(
+        defensive_stats_df[["player_id", "def_fpts"]], on="player_id", how="left"
+    )
+    adp_df["fpts"] = adp_df.apply(
+        lambda row: row["def_fpts"] if row["POSITION"] == "DST" else row["fppr"], axis=1
+    )
+    return adp_df
+
+
+# Select player with weighted probabilities
+def select_player_with_weights(players, weights):
+    """
+    Randomly select a player based on weighted probabilities.
+    """
+    return random.choices(players.to_dict("records"), weights=weights[:len(players)], k=1)[0]
+
+
+# Simulate draft
 def simulate_draft(trial_number):
-    # Load the ADP data
+    # Load data
     adp_df = load_adp_file()
-
-    # Filter and sort by 'FPPRAVG'
-    adp_df = adp_df[['player_name', 'player_id', 'FPPRAVG', 'POSITION', 'year']]
-    adp_df = adp_df.sort_values(by='FPPRAVG', ascending=True).reset_index(drop=True)
-
-    # Load the seasonal stats and defensive stats for the selected year
     year = adp_df['year'].iloc[0]
     seasonal_stats_df = load_seasonal_stats(year)
     defensive_stats_df = load_defensive_stats(year)
+    adp_df = merge_stats(adp_df, seasonal_stats_df, defensive_stats_df)
 
-    # Merge FPPR data for non-DST players
-    adp_df = pd.merge(
-        adp_df,
-        seasonal_stats_df[['player_id', 'fppr']],
-        on='player_id',
-        how='left'
-    )
+    # Sort players by FPPRAVG
+    adp_df = adp_df.sort_values(by="FPPRAVG").reset_index(drop=True)
+    
 
-    # Merge fpts for DST players
-    defensive_stats_df = defensive_stats_df.rename(columns={'pa_team': 'player_id', 'fpts': 'def_fpts'})
-    adp_df = pd.merge(
-        adp_df,
-        defensive_stats_df[['player_id', 'def_fpts']],
-        on='player_id',
-        how='left'
-    )
-
-    # Assign fpts column based on position
-    adp_df['fpts'] = adp_df.apply(
-        lambda row: row['def_fpts'] if row['POSITION'] == 'DST' else row['fppr'], axis=1
-    )
-
-    # Initialize draft variables
-    num_managers = 12
-    num_rounds = 16
-    draft_order = list(range(1, num_managers + 1))
-    random.shuffle(draft_order)  # Randomize the draft order
+    # Initialize draft setup
+    draft_order = list(range(1, NUM_MANAGERS + 1))
+    random.shuffle(draft_order)
     results = []
+    pick_order = 1
 
-    # Track required positions for each manager (1 QB, 1 K, 1 DST, 2 RB, 2 WR, 1 TE)
-    required_positions = {
-        f"Team_{i}": {"QB": 1, "K": 1, "DST": 1, "RB": 2, "WR": 2, "TE": 1} for i in range(1, num_managers + 1)
-    }
+    # Track positions
+    required_positions = {f"Team_{i}": REQUIRED_POSITIONS.copy() for i in range(1, NUM_MANAGERS + 1)}
+    team_counts = {f"Team_{i}": REQUIRED_POSITIONS.copy() for i in range(1, NUM_MANAGERS + 1)}
 
-    # Track current position counts for each team
-    team_position_counts = {
-        f"Team_{i}": {"QB": 0, "RB": 0, "WR": 0, "TE": 0, "K": 0, "DST": 0} for i in range(1, num_managers + 1)
-    }
-
-    # Position limits
-    position_limits = {"QB": 4, "RB": 8, "WR": 8, "TE": 3, "K": 3, "DST": 3}
-
-    # Simulate the draft
-    for round_num in range(1, num_rounds + 1):
-    # Alternate between ascending and descending order for snake draft
+    # Simulate rounds
+    for round_num in range(1, NUM_ROUNDS + 1):
         current_order = draft_order if round_num % 2 != 0 else draft_order[::-1]
 
-        for pick, manager in enumerate(current_order, start=1):
+        for manager in current_order:
             team_name = f"Team_{manager}"
 
-            # Check if it's Player 1's pick in round 1, 2, or 3
+            # Special rule for Team_1 in rounds 1–3
             if team_name == "Team_1" and round_num <= 3:
-                # Force Player 1 to select an RB in rounds 1, 2, and 3
-                available_rbs = adp_df[adp_df['POSITION'] == 'RB']
-                if not available_rbs.empty:
-                    selected_player = available_rbs.sort_values(by='FPPRAVG', ascending=True).iloc[0]
-                    team_position_counts[team_name]['RB'] += 1                    
-                    if required_positions[team_name]['RB'] > 0:
-                        required_positions[team_name]['RB'] -= 1
-                else:
-                    # If no RBs are left, fallback to the best available player
-                    selected_player = adp_df.iloc[0]
-                    team_position_counts[team_name][selected_player['POSITION']] += 1
-                    if required_positions[team_name][selected_player['POSITION']] > 0:
-                        required_positions[team_name][selected_player['POSITION']] -= 1
+                available_rbs = adp_df[adp_df["POSITION"] == "RB"]
+                selected_player = available_rbs.iloc[0] if not available_rbs.empty else adp_df.iloc[0]
             else:
-                # Normal draft logic for other managers or after round 3 for Player 1
-                if adp_df.empty:
-                    print("No players left to draft!")
-                    break
+                # Select player based on position constraints
+                unmet_positions = [pos for pos, count in required_positions[team_name].items() if count > 0]
+                available_players = adp_df[
+                    adp_df["POSITION"].apply(lambda pos: team_counts[team_name][pos] < POSITION_LIMITS[pos])
+                ]
+                if unmet_positions:
+                    available_players = available_players[available_players["POSITION"].isin(unmet_positions)]
 
-                # Determine unmet required positions
-                unmet_positions = {pos: count for pos, count in required_positions[team_name].items() if count > 0}
-                num_unmet_positions = sum(unmet_positions.values())
-                rounds_left = num_rounds - round_num + 1
-
-                # Prioritize unmet positions if constraints apply
-                if num_unmet_positions > 0 and rounds_left <= num_unmet_positions:
-                    # Filter to only players that meet unmet required positions
-                    available_players = adp_df[
-                        (adp_df['POSITION'].isin(unmet_positions.keys())) &
-                        (adp_df['POSITION'].apply(lambda pos: team_position_counts[team_name][pos] < position_limits[pos]))
-                    ]
-                    if not available_players.empty:
-                        # Select the lowest FPPRAVG player from unmet positions
-                        selected_player = available_players.iloc[0]
-                        required_positions[team_name][selected_player['POSITION']] -= 1
-                        team_position_counts[team_name][selected_player['POSITION']] += 1
-                    else:
-                        # If no players for unmet positions are available, select the lowest overall
-                        selected_player = adp_df.iloc[0]
-                        team_position_counts[team_name][selected_player['POSITION']] += 1
-                        if required_positions[team_name][selected_player['POSITION']] > 0:
-                            required_positions[team_name][selected_player['POSITION']] -= 1
+                # Weighted selection
+                if round_num <= 3:
+                    top_players = available_players.head(5)
+                    selected_player = select_player_with_weights(top_players, ROUND_1_3_WEIGHTS)
                 else:
-                    # Otherwise, pick the lowest FPPRAVG player within position limits
-                    available_players = adp_df[
-                        adp_df['POSITION'].apply(lambda pos: team_position_counts[team_name][pos] < position_limits[pos])
-                    ]
-                    if not available_players.empty:
-                        selected_player = available_players.iloc[0]
+                    top_players = available_players.head(6)
+                    selected_player = select_player_with_weights(top_players, ROUND_4_16_WEIGHTS)
 
-                        # Helper function to select a player based on weighted probabilities
-                        def select_player_with_probabilities(players, probabilities):
-                            """Randomly select a player from a list based on given probabilities."""
-                            return random.choices(players, weights=probabilities, k=1)[0]
+            # Update position counts
+            position = selected_player["POSITION"]
+            team_counts[team_name][position] += 1
+            if required_positions[team_name][position] > 0:
+                required_positions[team_name][position] -= 1
 
-                        # Adjusted selection logic
-                        if round_num <= 3:
-                            # For rounds 1–3, apply the weighted probabilities
-                            top_players = available_players.head(5)  # Get the top 5 players by FPPRAVG
-                            if len(top_players) >= 5:
-                                probabilities = [0.64, 0.20, 0.10, 0.05, 0.01]
-                                selected_player = select_player_with_probabilities(top_players.to_dict('records'), probabilities)
-                            else:
-                                # Fallback: if fewer than 5 players, pick the lowest FPPRAVG
-                                selected_player = available_players.iloc[0]
-                        else:
-                            # For rounds 4–16, adjust probabilities for the top 6 players
-                            top_players = available_players.head(6)  # Get the top 6 players by FPPRAVG
-                            if len(top_players) >= 6:
-                                probabilities = [0.50, 0.10, 0.10, 0.10, 0.10, 0.10]
-                                selected_player = select_player_with_probabilities(top_players.to_dict('records'), probabilities)
-                            else:
-                                # Fallback: if fewer than 6 players, pick the lowest FPPRAVG
-                                selected_player = available_players.iloc[0]
-
-                        # Update team positions and required positions
-                        team_position_counts[team_name][selected_player['POSITION']] += 1
-                        if required_positions[team_name][selected_player['POSITION']] > 0:
-                            required_positions[team_name][selected_player['POSITION']] -= 1
-
-                    else:
-                        # Adjusted selection logic
-                        if round_num <= 3:
-                            # For rounds 1–3, apply the weighted probabilities
-                            top_players = adp_df.head(5)  # Get the top 5 players by FPPRAVG
-                            if len(top_players) >= 5:
-                                probabilities = [0.64, 0.20, 0.10, 0.05, 0.01]
-                                selected_player = select_player_with_probabilities(top_players.to_dict('records'), probabilities)
-                            else:
-                                # Fallback: if fewer than 5 players, pick the lowest FPPRAVG
-                                selected_player = adp_df.iloc[0]
-                        else:
-                            # For rounds 4–16, adjust probabilities for the top 6 players
-                            top_players = adp_df.head(6)  # Get the top 6 players by FPPRAVG
-                            if len(top_players) >= 6:
-                                probabilities = [0.50, 0.10, 0.10, 0.10, 0.10, 0.10]
-                                selected_player = select_player_with_probabilities(top_players.to_dict('records'), probabilities)
-                            else:
-                                # Fallback: if fewer than 6 players, pick the lowest FPPRAVG
-                                selected_player = adp_df.iloc[0]
-                        # Update team positions and required positions
-                        team_position_counts[team_name][selected_player['POSITION']] += 1
-                        if required_positions[team_name][selected_player['POSITION']] > 0:
-                            required_positions[team_name][selected_player['POSITION']] -= 1
-
-            # Record the pick
+            # Record pick
             results.append({
-                'trial_number': trial_number,
-                'round': round_num,
-                'pick': pick,
-                'player_name': selected_player['player_name'],
-                'player_id': selected_player['player_id'],
-                'fppravg': selected_player['FPPRAVG'],
-                'fpts': selected_player['fpts'],
-                'position': selected_player['POSITION'],
-                'team_name': team_name,
-                'year': selected_player['year']
+                "trial_number": trial_number,
+                "round": round_num,
+                "overall_pick": pick_order,
+                "team_name": team_name,
+                "player_name": selected_player["player_name"],
+                "player_id": selected_player["player_id"],
+                "position": position,
+                "fpts": selected_player["fpts"],
+                "year": year
             })
 
-            # Remove the selected player from the pool
-            adp_df = adp_df[adp_df['player_id'] != selected_player['player_id']].reset_index(drop=True)
-
+            pick_order += 1
+            adp_df = adp_df[adp_df["player_id"] != selected_player["player_id"]].reset_index(drop=True)  # Round FFPRAVG to 2 decimal
+            adp_df["fpts"] = adp_df["fpts"].round(2)
     return results
 
-# Run the simulation 100 times
-all_results = []
-for trial in range(1, number_of_trial):
-    all_results.extend(simulate_draft(trial))
 
-# Save all results to a single CSV file
-results_df = pd.DataFrame(all_results)
-output_file = os.path.join(results_folder, 'draft_results.csv')
-results_df.to_csv(output_file, index=False)
-print(f"Draft results for all trials saved to {output_file}")
+# Main execution
+if __name__ == "__main__":
+    start_time = time.time()
 
-end_time = time.time()
-elapsed_time = end_time - start_time
-print(f"Elapsed time: {elapsed_time} seconds")
+    all_results = []
+    for trial in range(1, NUMBER_OF_TRIALS + 1):
+        all_results.extend(simulate_draft(trial))
+
+    # Save results
+    os.makedirs(RESULTS_FOLDER, exist_ok=True)
+    results_df = pd.DataFrame(all_results)
+    output_file = os.path.join(RESULTS_FOLDER, "draft_results.csv")
+    results_df.to_csv(output_file, index=False)
+    print(f"Draft results saved to {output_file}")
+
+    end_time = time.time()
+    print(f"Elapsed time: {end_time - start_time:.2f} seconds")
