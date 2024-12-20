@@ -1,7 +1,16 @@
 from pathlib import Path
 
-# Settings
-PROJECT_ROOT = Path.cwd()
+from pathlib import Path
+
+def find_project_root(marker: str = "requirements.txt") -> Path:
+    """Find the project root by searching for a marker file."""
+    current = Path.cwd()
+    for parent in current.parents:
+        if (parent / marker).exists():
+            return parent
+    return current  # Fallback to the current working directory
+
+PROJECT_ROOT = find_project_root()
 
 # Directory Locations
 DATA_DIR = PROJECT_ROOT / "src/data"

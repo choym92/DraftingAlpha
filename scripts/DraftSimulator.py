@@ -21,7 +21,6 @@ def extract_years(folder_path: Path) -> List[int]:
                 for file in folder_path.glob("*.csv") if re.match(r"^\d{4}", file.name)]
     return sorted(years)
 
-
 # Load ADP file
 def load_adp_file():
     year = random.choice(extract_years(ADP_DIR))
@@ -30,15 +29,12 @@ def load_adp_file():
     adp_df['year'] = year  
     return adp_df
 
-
 # Load stats
 def load_seasonal_stats(year):
     return load_file(SEASONAL_STATS_DIR, f"player_stats_{year}.csv")
 
-
 def load_defensive_stats(year):
     return load_file(DEFENSIVE_STATS_DIR, f"seasonal_defensive_stats_{year}.csv")
-
 
 # Merge stats into ADP
 def merge_stats(adp_df, seasonal_stats_df, defensive_stats_df):
@@ -54,14 +50,12 @@ def merge_stats(adp_df, seasonal_stats_df, defensive_stats_df):
     )
     return adp_df
 
-
 # Select player with weighted probabilities
 def select_player_with_weights(players, weights):
     """
     Randomly select a player based on weighted probabilities.
     """
     return random.choices(players.to_dict("records"), weights=weights[:len(players)], k=1)[0]
-
 
 # Simulate draft
 def simulate_draft(trial_number):
@@ -75,7 +69,6 @@ def simulate_draft(trial_number):
     # Sort players by FPPRAVG
     adp_df = adp_df.sort_values(by="FPPRAVG").reset_index(drop=True)
     
-
     # Initialize draft setup
     draft_order = list(range(1, NUM_MANAGERS + 1))
     random.shuffle(draft_order)
@@ -137,7 +130,6 @@ def simulate_draft(trial_number):
             adp_df = adp_df[adp_df["player_id"] != selected_player["player_id"]].reset_index(drop=True)  # Round FFPRAVG to 2 decimal
             adp_df["fpts"] = adp_df["fpts"].round(2)
     return results
-
 
 # Main execution
 if __name__ == "__main__":
