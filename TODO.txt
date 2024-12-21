@@ -1,0 +1,16 @@
+DraftSimulator
+    Agent Picks
+        CMO: 보드에 있는 선수 정보를 ADP 순으로 배열하여 가장 높은 순위에 있는 선수들부터 자동으로 픽 (상위 5선수중 랜덤선택)
+        FMO: Bot들은 현재 드래프트방식 유지. Agent는 FPPRPOS로만 픽을 선택. 선택전
+            Agent는  FPPRPOS를 random order으로 reshuffle 필요.
+            Agent 혹은 Bot이 픽할때 하나의 remaining player 에서 선수가 remove 될수있도록 코드 짜야함
+    Ranking after every round
+        CMO: 랭킹은 모든 Trial이 끝난 후 DraftResults_details 파일을 통해 산정
+        FMO: 랭킹을 매 Round 끝난 후 current_rank를 산정
+            Starting Positions을 DraftResults_details에서 옮겨와야 함
+            Waiver_Points는 반드시 16라운드가 끝난 후 apply 되도록 (모든 로스터가 정해지고 waiver point에 따른 최종 순위 결정하게끔 매커니즘 설정)
+            DraftResults_details은 그 후 파일 제거 가능
+
+Q School
+    Reward
+    Control Against Overfitting
