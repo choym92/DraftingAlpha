@@ -14,3 +14,17 @@ DraftSimulator
 Q School
     Reward
     Control Against Overfitting
+
+ADP 파일 정리
+    QB
+        최대 X 선수
+    RB
+        최대 X 선수
+    WR
+        최대 X 선수
+    TE
+        최대 X 선수
+    DST
+        32개팀 모두 ADP Value 있게 Update
+    K
+        최대 X 선수
