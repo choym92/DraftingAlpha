@@ -2,17 +2,12 @@ import os
 import pandas as pd
 import random
 import numpy as np
+from utility.constants import NUM_ROUNDS, RESULTS_DIR, SEASONAL_STATS_DIR, DEFENSIVE_STATS_DIR
 
-n = 16
 
-# Folder containing the ADP files
-results_folder ='results'
-adp_folder = 'adp'
-seasonal_stats_folder = 'seasonalstats'
-defensive_stats_folder = 'defensivestats'
 
 # Load the draft results file
-draft_results_file = os.path.join(results_folder, 'draft_results.csv')
+draft_results_file = os.path.join(RESULTS_DIR, 'draft_results.csv')
 draft_results_df = pd.read_csv(draft_results_file)
 
 # Ensure the draft results contain the 'year' column
@@ -99,7 +94,7 @@ fantasy_ranking_df = pd.DataFrame(fantasy_ranking)
 def load_seasonal_stats(year):
     """Load seasonal stats for the given year."""
     file_name = f"player_stats_{year}.csv"
-    file_path = os.path.join(seasonal_stats_folder, file_name)
+    file_path = os.path.join(SEASONAL_STATS_DIR, file_name)
     if not os.path.exists(file_path):
         raise FileNotFoundError(f"Seasonal stats file not found for year {year}: {file_path}")
     return pd.read_csv(file_path)
@@ -122,11 +117,11 @@ fantasy_ranking_df[waiver_columns] = 0  # Initialize columns
 for year in fantasy_ranking_df['year'].unique():
     seasonal_stats_df = load_seasonal_stats(year)
 
-    qb_waiver_fpts = calculate_waiver_points(seasonal_stats_df, 'QB', 1.6, n)
-    wr_waiver_fpts = calculate_waiver_points(seasonal_stats_df, 'WR', 3.6, n)
-    rb_waiver_fpts = calculate_waiver_points(seasonal_stats_df, 'RB', 3.6, n)
-    te_waiver_fpts = calculate_waiver_points(seasonal_stats_df, 'TE', 1.6, n)
-    k_waiver_fpts = calculate_waiver_points(seasonal_stats_df, 'K', 1.6, n)
+    qb_waiver_fpts = calculate_waiver_points(seasonal_stats_df, 'QB', 1.6, NUM_ROUNDS)
+    wr_waiver_fpts = calculate_waiver_points(seasonal_stats_df, 'WR', 3.6, NUM_ROUNDS)
+    rb_waiver_fpts = calculate_waiver_points(seasonal_stats_df, 'RB', 3.6, NUM_ROUNDS)
+    te_waiver_fpts = calculate_waiver_points(seasonal_stats_df, 'TE', 1.6, NUM_ROUNDS)
+    k_waiver_fpts = calculate_waiver_points(seasonal_stats_df, 'K', 1.6, NUM_ROUNDS)
 
     # Update the corresponding rows in the DataFrame
     fantasy_ranking_df.loc[fantasy_ranking_df['year'] == year, 'qb_waiver_fpts'] = qb_waiver_fpts
@@ -175,7 +170,7 @@ for index, row in fantasy_ranking_df.iterrows():
 def load_defensive_stats(year):
     """Load seasonal defensive stats for the given year."""
     file_name = f"seasonal_defensive_stats_{year}.csv"
-    file_path = os.path.join(defensive_stats_folder, file_name)
+    file_path = os.path.join(DEFENSIVE_STATS_DIR, file_name)
     if not os.path.exists(file_path):
         raise FileNotFoundError(f"Defensive stats file not found for year {year}: {file_path}")
     return pd.read_csv(file_path)
@@ -195,7 +190,7 @@ for year in fantasy_ranking_df['year'].unique():
     defensive_stats_df = load_defensive_stats(year)
 
     # Calculate DST waiver points
-    dst_waiver_fpts = calculate_defensive_waiver_points(defensive_stats_df, 1.6, n)
+    dst_waiver_fpts = calculate_defensive_waiver_points(defensive_stats_df, 1.6, NUM_ROUNDS)
 
     # Update the corresponding rows in the DataFrame
     fantasy_ranking_df.loc[fantasy_ranking_df['year'] == year, 'dst_waiver_fpts'] = dst_waiver_fpts
@@ -223,6 +218,6 @@ fantasy_ranking_df['total_fpts'].replace([float('inf'), -float('inf')], 0, inpla
 fantasy_ranking_df['rank'] = fantasy_ranking_df.groupby('trial_number')['total_fpts'].rank(ascending=False).astype(int)
 
 # Save to CSV
-fantasy_ranking_file = os.path.join(results_folder, 'fantasy_ranking.csv')
+fantasy_ranking_file = os.path.join(RESULTS_DIR, 'fantasy_ranking.csv')
 fantasy_ranking_df.to_csv(fantasy_ranking_file, index=False)
 print(f"Fantasy ranking saved to {fantasy_ranking_file}")
