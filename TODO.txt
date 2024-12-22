@@ -25,6 +25,6 @@ ADP 파일 정리
     TE
         최대 X 선수
     DST
-        32개팀 모두 ADP Value 있게 Update
+        32개팀 모두 ADP Update
     K
         최대 X 선수
