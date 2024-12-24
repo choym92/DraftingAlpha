@@ -12,7 +12,7 @@ DraftSimulator
 
 Q School
     Reward
-    Control Against Overfitting??
+    Control Against Overfitting
 
 ADP 파일 정리
     QB
@@ -57,3 +57,34 @@ ADP 파일 정리
             2020: 50
             2021: 43
             2022: 29
+
+
+PPO LOGIC:
+
+포지션, 이름, Scarcity, Tier
+
+PPO   
+각 년도마다 탑티어 포지션 / 전선수 포지션  
+
+포지션 이름 
+
+ADP 대피 TopTier 상정 한후 Scarcity
+조쉬앨런을 가져갔다, 허츠, 라마 숫자뛰는거 = 애드한다?
+
+1. Introduce Positional Scarcity in the Reward (Prioritization)
+- I think it will be good to introduce 
+-  Total Players Remaining Position / Remaining Quality Players Position = Scarcity
+- aka. positional_scarcity[position] > 0.5
+    reward += 5
+
+Encourages smarter drafting by balancing roster composition with positional priorities.
+Prevents the agent from overdrafting positions that are plentiful.
+Simulates realistic draft scenarios where positional scarcity plays a critical role.
+Positional scarcity tells the agent when to draft a position (e.g., "Few TEs are left—grab one now!").
+Buckets guide the agent to select better players within that position (e.g., "This RB is top-tier; prioritize them over lower-tier RBs.").
+
+
+2. Avoiding Memorization (Bucket ADP ranking by position)
+By using buckets instead of raw ADP ranking, you reduce the risk of overfitting to specific player names or yearly trends.
+
+QB 1. TOP ADP Tier (%) MID ADP Tier (%) Low ADP Tier 

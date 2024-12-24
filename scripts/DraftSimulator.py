@@ -26,7 +26,7 @@ def load_adp_file():
     year = random.choice(extract_years(ADP_DIR))
     file_name = f"{year}ADP.csv"
     adp_df = load_file(ADP_DIR, file_name)
-    adp_df['year'] = year  
+    adp_df['year'] = year   
     return adp_df
 
 # Load stats
@@ -64,10 +64,10 @@ def simulate_draft(trial_number):
     year = adp_df['year'].iloc[0]
     seasonal_stats_df = load_seasonal_stats(year)
     defensive_stats_df = load_defensive_stats(year)
-    adp_df = merge_stats(adp_df, seasonal_stats_df, defensive_stats_df)
+    data_df = merge_stats(adp_df, seasonal_stats_df, defensive_stats_df)
 
     # Sort players by FPPRAVG
-    adp_df = adp_df.sort_values(by="FPPRAVG").reset_index(drop=True)
+    data_df = data_df.sort_values(by="FPPRAVG").reset_index(drop=True)
     
     # Initialize draft setup
     draft_order = list(range(1, NUM_MANAGERS + 1))
@@ -88,13 +88,13 @@ def simulate_draft(trial_number):
 
             # Special rule for Team_1 in rounds 1–3
             if team_name == "Team_1" and round_num <= 3:
-                available_rbs = adp_df[adp_df["POSITION"] == "RB"]
-                selected_player = available_rbs.iloc[0] if not available_rbs.empty else adp_df.iloc[0]
+                available_rbs = data_df[data_df["POSITION"] == "RB"]
+                selected_player = available_rbs.iloc[0] if not available_rbs.empty else data_df.iloc[0]
             else:
                 # Select player based on position constraints
                 unmet_positions = [pos for pos, count in required_positions[team_name].items() if count > 0]
-                available_players = adp_df[
-                    adp_df["POSITION"].apply(lambda pos: team_counts[team_name][pos] < POSITION_LIMITS[pos])
+                available_players = data_df[
+                    data_df["POSITION"].apply(lambda pos: team_counts[team_name][pos] < POSITION_LIMITS[pos])
                 ]
                 if unmet_positions:
                     available_players = available_players[available_players["POSITION"].isin(unmet_positions)]
@@ -127,8 +127,8 @@ def simulate_draft(trial_number):
             })
 
             pick_order += 1
-            adp_df = adp_df[adp_df["player_id"] != selected_player["player_id"]].reset_index(drop=True)  # Round FFPRAVG to 2 decimal
-            adp_df["fpts"] = adp_df["fpts"].round(2)
+            data_df = data_df[data_df["player_id"] != selected_player["player_id"]].reset_index(drop=True)  # Round FFPRAVG to 2 decimal
+            data_df["fpts"] = data_df["fpts"].round(2)
     return results
 
 # Main execution
