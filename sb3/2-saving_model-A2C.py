@@ -5,8 +5,8 @@ import os
 
 print(os.getcwd())
 models = "A2C"
-models_dir = f"notebook/sb3/models/{models}"
-logdir = "notebook/sb3/logs"
+models_dir = f"models/{models}"
+logdir = "logs"
 
 if not os.path.exists(models_dir):
     os.makedirs(models_dir)
@@ -15,10 +15,10 @@ if not os.path.exists(logdir):
     os.makedirs(logdir)
 
 # Create the environment
-env = gym.make("LunarLander-v3", render_mode="human")
+env = gym.make("LunarLander-v3")
 obs, info = env.reset()  # Unpack the reset output (obs, info)
 
-model = PPO("MlpPolicy", env, verbose=1, tensorboard_log=logdir)
+model = A2C("MlpPolicy", env, verbose=1, tensorboard_log=logdir)
 
 TIMESTEPS = 100000
 
