@@ -1,10 +1,12 @@
 import gymnasium as gym
 from stable_baselines3 import PPO, A2C
+import time
 import os
+
 
 models = "A2C"
 models_dir = f"models/{models}-{int(time.time())}"
-logdir = f"logs.{models}-{int(time.time())}"
+logdir = f"logs/{models}-{int(time.time())}"
 ITER_COUNT = 100
 
 if not os.path.exists(models_dir):

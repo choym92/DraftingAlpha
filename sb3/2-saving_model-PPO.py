@@ -5,7 +5,7 @@ import os
 
 models = "PPO"
 models_dir = f"models/{models}-{int(time.time())}"
-logdir = f"logs.{models}-{int(time.time())}"
+logdir = f"logs/{models}-{int(time.time())}"
 ITER_COUNT = 100
 
 if not os.path.exists(models_dir):

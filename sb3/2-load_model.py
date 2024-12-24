@@ -7,8 +7,8 @@ import os
 env = gym.make("LunarLander-v3", render_mode="human")
 obs, info = env.reset()  # Unpack the reset output (obs, info)
 
-models_dir = "models/PPO"
-model_path = f"{models_dir}/100000*i.zip"
+models_dir = "models/PPO-1735016254"
+model_path = f"{models_dir}/9700000"
 
 model = PPO.load(model_path, env=env)
 
