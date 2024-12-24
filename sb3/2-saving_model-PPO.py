@@ -1,12 +1,12 @@
 import gymnasium as gym
 from stable_baselines3 import PPO, A2C
-
+import time
 import os
 
-print(os.getcwd())
 models = "PPO"
-models_dir = f"models/{models}"
-logdir = "logs"
+models_dir = f"models/{models}-{int(time.time())}"
+logdir = f"logs.{models}-{int(time.time())}"
+ITER_COUNT = 100
 
 if not os.path.exists(models_dir):
     os.makedirs(models_dir)
@@ -22,9 +22,9 @@ model = PPO("MlpPolicy", env, verbose=1, tensorboard_log=logdir)
 
 TIMESTEPS = 100000
 
-for i in range(1, 30):
-    model.learn(total_timesteps=TIMESTEPS, reset_num_timesteps=False, tb_log_name=models)
-    model.save(f"{models_dir}/{TIMESTEPS}*i")
+for i in range(1, ITER_COUNT):
+    model.learn(total_timesteps=TIMESTEPS, reset_num_timesteps=False, tb_log_name=f"{models}-{TIMESTEPS}")
+    model.save(f"{models_dir}/{TIMESTEPS*i}")
 
 episodes = 10
 

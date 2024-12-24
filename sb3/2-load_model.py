@@ -2,28 +2,16 @@ import gymnasium as gym
 from stable_baselines3 import PPO, A2C
 import os
 
-models = "A2C"
-models_dir = f"models/{models}-{int(time.time())}"
-logdir = f"logs.{models}-{int(time.time())}"
-ITER_COUNT = 100
-
-if not os.path.exists(models_dir):
-    os.makedirs(models_dir)
-
-if not os.path.exists(logdir):
-    os.makedirs(logdir)
 
 # Create the environment
-env = gym.make("LunarLander-v3")
+env = gym.make("LunarLander-v3", render_mode="human")
 obs, info = env.reset()  # Unpack the reset output (obs, info)
 
-model = A2C("MlpPolicy", env, verbose=1, tensorboard_log=logdir)
+models_dir = "models/PPO"
+model_path = f"{models_dir}/100000*i.zip"
 
-TIMESTEPS = 100000
+model = PPO.load(model_path, env=env)
 
-for i in range(1, ITER_COUNT):
-    model.learn(total_timesteps=TIMESTEPS, reset_num_timesteps=False, tb_log_name=f"{models}-{TIMESTEPS}")
-    model.save(f"{models_dir}/{TIMESTEPS*i}")
 
 episodes = 10
 
