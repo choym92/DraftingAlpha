@@ -1,9 +1,8 @@
 DraftSimulator
     Agent Picks
         CMO: 보드에 있는 선수 정보를 ADP 순으로 배열하여 가장 높은 순위에 있는 선수들부터 자동으로 픽 (상위 5선수중 랜덤선택)
-        FMO: Bot들은 현재 드래프트방식 유지. Agent는 FPPRPOS로만 픽을 선택. 선택전
-            Agent는  FPPRPOS를 random order으로 reshuffle 필요.
-            Agent 혹은 Bot이 픽할때 하나의 remaining player 에서 선수가 remove 될수있도록 코드 짜야함
+        FMO: Bot들은 현재 드래프트방식 유지. Agent는 Player_ID 혹은 Player_Name, 그리고 POS로 픽을 선택.
+            Available Postions을 포지션별 DST Top 20 // K Top 20 // RB TOP 70 // WR TOP 80 // QB TOP 30 // TE TOP 30 선수만을 뜨게한다. 다만 FPPRPOS와 ADP는 DROP해야함. Shuffle by Player_ID
     Ranking after every round
         CMO: 랭킹은 모든 Trial이 끝난 후 DraftResults_details 파일을 통해 산정
         FMO: 랭킹을 매 Round 끝난 후 current_rank를 산정
@@ -13,18 +12,48 @@ DraftSimulator
 
 Q School
     Reward
-    Control Against Overfitting
+    Control Against Overfitting??
 
 ADP 파일 정리
     QB
         최대 X 선수
+            2018: 59
+            2019: 73
+            2020: 78
+            2021: 58
+            2022: 39
     RB
         최대 X 선수
+            2018: 126
+            2019: 140
+            2020: 154
+            2021: 131
+            2022: 97
     WR
         최대 X 선수
+            2018: 161
+            2019: 174
+            2020: 180
+            2021: 161
+            2022: 107
     TE
         최대 X 선수
+            2018: 73
+            2019: 88
+            2020: 87
+            2021: 63
+            2022: 44
     DST
         32개팀 모두 ADP Update
+            2018: 32 (added IND)
+            2019: 32
+            2020: 32
+            2021: 32
+            2022: 32 (added ATL)
     K
         최대 X 선수
+            2018: 34
+            2019: 54
+            2020: 50
+            2021: 43
+            2022: 29
