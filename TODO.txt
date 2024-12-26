@@ -59,17 +59,13 @@ ADP 파일 정리
             2022: 29
 
 
+---------------------------------------------------------------------------------------------
+
 PPO LOGIC:
 
 포지션, 이름, Scarcity, Tier
 
-PPO   
-각 년도마다 탑티어 포지션 / 전선수 포지션  
 
-포지션 이름 
-
-ADP 대피 TopTier 상정 한후 Scarcity
-조쉬앨런을 가져갔다, 허츠, 라마 숫자뛰는거 = 애드한다?
 
 1. Introduce Positional Scarcity in the Reward (Prioritization)
 - I think it will be good to introduce 
@@ -88,3 +84,67 @@ Buckets guide the agent to select better players within that position (e.g., "Th
 By using buckets instead of raw ADP ranking, you reduce the risk of overfitting to specific player names or yearly trends.
 
 QB 1. TOP ADP Tier (%) MID ADP Tier (%) Low ADP Tier 
+
+
+Data:
+1. Draft Fixture
+- Need to let model know it's pick number or when is next turn on pick
+- Round Number?
+- Team Needs (what position does agent need?) ***
+2. Player Based:
+- ADP?
+- Projected Points
+- Variance in Fantasy Points
+- Injury Risk/History
+- Bye Weeks
+3. Position-Specific Features
+- Positional Dropoff:
+Calculate how the average score drops from one tier to the next within a position. This can help assess the urgency of selecting a player from a particular position.
+- Positional Value Above Replacement (VOR):
+Include how much better a player is compared to a baseline replacement-level player in the same position.
+4. League Settings and Dynamics
+- Roster Composition: ***
+Input the number of players required for each position (e.g., 1 QB, 2 RB, 3 WR, etc.) to help optimize picks.
+- Scoring Settings:
+Incorporate PPR (Point Per Reception), half-PPR, or standard scoring rules to adjust positional value dynamically.
+- Draft Pool Size:
+Consider the total player pool and how deep the draft is, as this affects scarcity dynamics.
+
+5. Opponent Drafting Behavior
+- Opponent Team Needs:
+Include features summarizing what positions opponents have already drafted to predict their upcoming picks.
+- Opponent Draft Trends:
+Identify patterns in opponent behavior, such as a tendency to draft certain positions early.
+
+6. Dynamic Features During Draft
+- Remaining Player Pool:
+Track the number of players left in each position/tier to adapt strategies dynamically as the draft progresses.
+- Opportunity Cost:
+Assess what you’re giving up (e.g., RB scarcity) by drafting a player from another position (e.g., WR).
+- Tier Depth:
+How many players remain in the current tier for each position? This helps prioritize high-scarcity positions.
+
+
+Combining Features
+You can also create interaction terms that combine features for more nuanced insights:
+Scarcity × Positional Tier: To prioritize players in scarce positions at high tiers.
+Opponent Needs × Scarcity: To predict when opponents might target players in scarce positions.
+
+
+What is Scarcity: 
+각 년도마다 탑티어 포지션 / 전선수 포지션  
+포지션 이름 
+ADP 대피 TopTier 상정 한후 Scarcity
+조쉬앨런을 가져갔다, 허츠, 라마 숫자뛰는거 = 애드한다?
+
+
+VOR  (Positional Value Above Replacement)
+Player Name	Position	Projected Points	Replacement-Level Points	VOR
+Christian McCaffrey 	RB	330	200	130
+Austin Ekeler	RB	280	200	80
+Justin Jefferson	WR	310	180	130
+Davante Adams	WR	270	180	90
+Patrick Mahomes	QB	350	250	100
+
+Example: Justin Jefferson (VOR: 130) is equally valuable as Christian McCaffrey (VOR: 130) despite playing different positions.
+Example: The gap between elite RBs (e.g., McCaffrey) and replacement-level RBs is larger than the gap between elite QBs (e.g., Mahomes) and replacement-level QBs.

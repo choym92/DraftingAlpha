@@ -1,6 +1,11 @@
 import nfl_data_py as nfl
 import pandas as pd
 import os
+import sys
+from pathlib import Path
+root_dir = Path(__file__).parent.parent
+sys.path.append(str(root_dir))
+
 from utility.constants import *
 
 # Create the 'seasonalstats' folder if it doesn't exist
