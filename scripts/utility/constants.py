@@ -27,7 +27,7 @@ YEAR_END = 2023
 # Constants for Simulator
 NUMBER_OF_TRIALS = 1000
 NUM_MANAGERS = 12
-NUM_ROUNDS = 16
+TOTAL_NUM_ROUNDS = 16
 
 # Position limits and requirements
 POSITION_LIMITS = {"QB": 4, "RB": 8, "WR": 8, "TE": 3, "K": 3, "DST": 3}
