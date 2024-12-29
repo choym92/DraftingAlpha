@@ -1,5 +1,10 @@
 import nfl_data_py as nfl
 import pandas as pd
+import sys
+from pathlib import Path
+root_dir = Path(__file__).parent.parent
+sys.path.append(str(root_dir))
+
 from utility.constants import ROSTER_DIR, YEAR_BEGINNING, YEAR_END
 
 

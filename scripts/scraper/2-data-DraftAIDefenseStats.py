@@ -1,6 +1,12 @@
+import sys
+from pathlib import Path
+root_dir = Path(__file__).parent.parent
+sys.path.append(str(root_dir))
+
 import nfl_data_py as nfl
 import pandas as pd
 import os
+
 from utility.constants import *
 
 
