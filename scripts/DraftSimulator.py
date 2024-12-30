@@ -76,8 +76,8 @@ def simulate_draft(trial_number):
     pick_order = 1
 
     # Track positions
-    required_positions = {f"Team_{i}": REQUIRED_POSITIONS.copy() for i in range(1, NUM_MANAGERS + 1)}
-    team_counts = {f"Team_{i}": REQUIRED_POSITIONS.copy() for i in range(1, NUM_MANAGERS + 1)}
+    required_positions = {f"Team_{i}": STARTER_POSITIONS.copy() for i in range(1, NUM_MANAGERS + 1)}
+    team_counts = {f"Team_{i}": STARTER_POSITIONS.copy() for i in range(1, NUM_MANAGERS + 1)}
 
     # Simulate rounds
     for round_num in range(1, NUM_ROUNDS + 1):

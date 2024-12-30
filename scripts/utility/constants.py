@@ -31,7 +31,7 @@ TOTAL_NUM_ROUNDS = 16
 
 # Position limits and requirements
 POSITION_LIMITS = {"QB": 4, "RB": 8, "WR": 8, "TE": 3, "K": 3, "DST": 3}
-REQUIRED_POSITIONS = {"QB": 1, "K": 1, "DST": 1, "RB": 2, "WR": 2, "TE": 1}
+STARTER_POSITIONS = {"QB": 1, "K": 1, "DST": 1, "RB": 2, "WR": 2, "TE": 1}
 
 # Weighted probabilities for Draft Logic
 ROUND_1_3_WEIGHTS = [0.64, 0.20, 0.10, 0.05, 0.01]
